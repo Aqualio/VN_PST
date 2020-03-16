@@ -10,6 +10,5 @@ GIT Commandline
 <br/>Pour mettre un message avant d'envoyer les fichiers ajoutés.
 - git **push** 
 <br/>Pour modifier le repo sur github.
-<br/>
 - git **status** 
 <br/>Juste pour voir si on est à jour, pas obligatoire si vous pullez à chaque fois.
