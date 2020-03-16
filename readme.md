@@ -1,9 +1,9 @@
-git clone https://github.com/Aqualio/VN_PST.git #La première fois, après avoir créer un dossier
+0. ```git **clone** https://github.com/Aqualio/VN_PST.git``` #La première fois, après avoir créer un dossier
 
-git pull                                        #Pour DL les fichiers depuis le repo (à faire à chaque fois avant de modifier)
+1. ```git **pull**```                                        #Pour DL les fichiers depuis le repo (à faire à chaque fois avant de modifier)
 
-git add .                                       #Pour ajouter les fichiers modifiés et ajoutés au repo
+2. ```git **add** . ```                                      #Pour ajouter les fichiers modifiés et ajoutés au repo
 
-git commit -m "message"                         #Pour mettre un message avant d'envoyer les fichiers ajoutés
+3. ```git **commit** -m "message"```                         #Pour mettre un message avant d'envoyer les fichiers ajoutés
 
-git push                                        #Pour modifier le repo sur github
+4. ```git **push**```                                        #Pour modifier le repo sur github
