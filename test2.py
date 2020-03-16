@@ -1,1 +1,1 @@
-patate
+patate != purée
