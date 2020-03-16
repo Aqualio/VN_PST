@@ -1,3 +1,4 @@
+[GIT Commandline]
 - git **clone** https://github.com/Aqualio/VN_PST.git 
 La première fois, après avoir créer un dossier
 - git **pull** 
