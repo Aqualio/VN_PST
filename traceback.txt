@@ -1,0 +1,38 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/Map.rpy", line 42, in script call
+    $renpy.pause(hard=True)
+  File "game/script.rpy", line 121, in script
+    call screen buttons()
+  File "renpy/common/000statements.rpy", line 531, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+Exception: Screen buttons is not known.
+
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "game/Map.rpy", line 42, in script call
+    $renpy.pause(hard=True)
+  File "game/script.rpy", line 121, in script
+    call screen buttons()
+  File "C:\Users\ma-cl\Downloads\renpy\renpy-7.3.5-sdk\renpy\ast.py", line 1949, in execute
+    self.call("execute")
+  File "C:\Users\ma-cl\Downloads\renpy\renpy-7.3.5-sdk\renpy\ast.py", line 1937, in call
+    return renpy.statements.call(method, parsed, *args, **kwargs)
+  File "C:\Users\ma-cl\Downloads\renpy\renpy-7.3.5-sdk\renpy\statements.py", line 277, in call
+    return method(parsed, *args, **kwargs)
+  File "renpy/common/000statements.rpy", line 531, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+  File "C:\Users\ma-cl\Downloads\renpy\renpy-7.3.5-sdk\renpy\exports.py", line 2900, in call_screen
+    show_screen(_screen_name, _transient=True, *args, **kwargs)
+  File "C:\Users\ma-cl\Downloads\renpy\renpy-7.3.5-sdk\renpy\display\screen.py", line 1107, in show_screen
+    raise Exception("Screen %s is not known.\n" % (name[0],))
+Exception: Screen buttons is not known.
+
+
+Windows-8-6.2.9200
+Ren'Py 7.3.5.606
+test 1.0
+Sat May 09 17:42:25 2020
