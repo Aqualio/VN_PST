@@ -3,7 +3,7 @@
 label Map :
     call screen Map #Use call as it returns a value
 
-    m "Current location [location]"
+    #m "Current location [location]"
     #m "Selected [_return]"
 
     if _return != location and _return != "None": ##Check that the value return by the map screen isn't null and the same location as the current one 
@@ -14,7 +14,7 @@ label Map :
         $location = _return ## We save our next current location 
         ##m "Moving to [location]"
         $renpy.show_screen("".join([location])) #We display the background of the new current location 
-        with fade
+        with fade 
 
     elif _return == "None" : ## Check if the value return by map screen is null 
         ##m "No location chosen"

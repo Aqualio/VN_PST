@@ -1,13 +1,25 @@
-﻿image CampusMap = im.Scale("Plan_Gameplay_campus.jpg", 400, 234) 
+﻿##CHARACTER IMAGES 
 image John = "sylvie blue giggle.png"
 image Suzanne = "sylvie green surprised.png"
+##--------------------------------------------------------------------
+
+##UI IMAGES
+image CampusMap = im.Scale("Plan_Gameplay_campus.jpg", 400, 234) ##Image is bigger than what we need so we display it in another size.
 image BoutonDeplacement = "BoutonDeplacement.png" #Doublon plus bas 
 image carnet = "images/carnet.png"
 image carnet_hover = "carnet_hover.png"
 image take_notes_button = "images/Take_Notes_button_idle.png"
 image displacement = "BoutonDeplacement.png" #N'en garder qu'un 
 
+##---------------------------------------------------------------------
+##BACKGROUND IMAGE 
+image Library = "bg club.jpg"
+image Dormitory = "bg lecturehall.jpg"
+##----------------------------------------------------------------------
 
+init python:
+
+    config.tag_layer['bg'] = 'background' # all images with the tag 'bg' are put on layer 'bg'
         
 ##Marine's Screens
         
@@ -27,19 +39,21 @@ screen Map():
 
         
 screen Dormitory(): 
+    ##layer "background"
     zorder 0
     window:
         style "gm_root"
-        add "bg lecturehall.jpg" xalign 0.0 yalign 0.0 
+        add 'Dormitory' xalign 0.0 yalign 0.0
     
     
         
         
 screen Library(): 
+    ##layer "background"
     zorder 0
     window:
         style "gm_root"
-        add "bg club.jpg" xalign 0.0 yalign 0.0
+        add 'Library' xalign 0.0 yalign 0.0
         
         
 ##Nico's screens 
@@ -336,7 +350,7 @@ init python:
 
 
 screen buttons():
-    zorder 1 
+    zorder 5
     imagebutton:
                 idle "boy a_casual_normal_idle.png"
                 hover "boy a_casual_normal_hover.png"
