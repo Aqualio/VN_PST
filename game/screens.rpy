@@ -292,13 +292,16 @@ style quick_button_text:
 screen navigation():
 
     vbox:
-        style_prefix "navigation"
+        #style_prefix "navigation"
+        xalign -0.1
 
-        xpos gui.navigation_xpos
-        yalign 0.5
+        
+        #xpos gui.navigation_xpos
+        xpos 40
+        yalign 0.1
 
         spacing gui.navigation_spacing
-
+        
         if main_menu:
 
             textbutton _("Start") action Start()
@@ -401,11 +404,11 @@ style main_menu_vbox:
 style main_menu_text:
     properties gui.text_properties("main_menu", accent=True)
 
-style main_menu_title:
-    properties gui.text_properties("title")
+#style main_menu_title:
+#    properties gui.text_properties("title")
 
-style main_menu_version:
-    properties gui.text_properties("version")
+#style main_menu_version:
+#    properties gui.text_properties("version")
 
 
 ## Game Menu screen ############################################################
@@ -720,7 +723,7 @@ screen preferences():
 
     tag menu
 
-    use game_menu(_("Preferences"), scroll="viewport"):
+    use game_menu(_("                Preferences"), scroll="viewport"):
 
         vbox:
 

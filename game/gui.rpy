@@ -23,33 +23,33 @@ init python:
 ## The colors of text in the interface.
 
 ## An accent color used throughout the interface to label and highlight text.
-define gui.accent_color = '#99ccff'
+define gui.accent_color = '#e2d800'
 
 ## The color used for a text button when it is neither selected nor hovered.
-define gui.idle_color = '#888888'
+define gui.idle_color = '#afafaf'
 
 ## The small color is used for small text, which needs to be brighter/darker to
 ## achieve the same effect.
-define gui.idle_small_color = '#aaaaaa'
+define gui.idle_small_color = '#acacac'
 
 ## The color that is used for buttons and bars that are hovered.
-define gui.hover_color = '#c1e0ff'
+define gui.hover_color = '#ffff00'
 
 ## The color used for a text button when it is selected but not focused. A
 ## button is selected if it is the current screen or preference value.
-define gui.selected_color = '#ffffff'
+define gui.selected_color = '#eadf00'
 
 ## The color used for a text button when it cannot be selected.
 define gui.insensitive_color = '#8888887f'
 
 ## Colors used for the portions of bars that are not filled in. These are not
 ## used directly, but are used when re-generating bar image files.
-define gui.muted_color = '#3d5166'
-define gui.hover_muted_color = '#5b7a99'
+define gui.muted_color = '#505100'
+define gui.hover_muted_color = '#7a7400'
 
 ## The colors used for dialogue and menu choice text.
-define gui.text_color = '#ffffff'
-define gui.interface_text_color = '#ffffff'
+define gui.text_color = '#a4a4a4'
+define gui.interface_text_color = '#a4a4a4'
 
 
 ## Fonts and Font Sizes ########################################################
@@ -70,7 +70,7 @@ define gui.text_size = 22
 define gui.name_text_size = 30
 
 ## The size of text in the game's user interface.
-define gui.interface_text_size = 22
+define gui.interface_text_size = 20
 
 ## The size of labels in the game's user interface.
 define gui.label_text_size = 24
@@ -146,14 +146,14 @@ define gui.dialogue_text_xalign = 0.0
 
 ## The width and height of a button, in pixels. If None, Ren'Py computes a size.
 define gui.button_width = None
-define gui.button_height = None
+define gui.button_height = 64
 
 ## The borders on each side of the button, in left, top, right, bottom order.
-define gui.button_borders = Borders(4, 4, 4, 4)
+define gui.button_borders = Borders(10, 10, 10, 10)
 
 ## If True, the background image will be tiled. If False, the background image
 ## will be linearly scaled.
-define gui.button_tile = False
+define gui.button_tile = True
 
 ## The font used by the button.
 define gui.button_text_font = gui.interface_text_font
@@ -164,7 +164,7 @@ define gui.button_text_size = gui.interface_text_size
 ## The color of button text in various states.
 define gui.button_text_idle_color = gui.idle_color
 define gui.button_text_hover_color = gui.hover_color
-define gui.button_text_selected_color = gui.selected_color
+define gui.button_text_selected_color = gui.accent_color
 define gui.button_text_insensitive_color = gui.insensitive_color
 
 ## The horizontal alignment of the button text. (0.0 is left, 0.5 is center, 1.0
@@ -178,9 +178,9 @@ define gui.button_text_xalign = 0.0
 ##
 ## These customizations are used by the default interface:
 
-define gui.radio_button_borders = Borders(18, 4, 4, 4)
+define gui.radio_button_borders = Borders(35, 5, 5, 5)
 
-define gui.check_button_borders = Borders(18, 4, 4, 4)
+define gui.check_button_borders = Borders(35, 5, 5, 5)
 
 define gui.confirm_button_text_xalign = 0.5
 
@@ -258,7 +258,7 @@ define gui.notify_ypos = 45
 define gui.choice_spacing = 22
 
 ## Buttons in the navigation section of the main and game menus.
-define gui.navigation_spacing = 4
+define gui.navigation_spacing = -20
 
 ## Controls the amount of spacing between preferences.
 define gui.pref_spacing = 10
@@ -469,3 +469,6 @@ init python:
 
         gui.nvl_button_width = 1240
         gui.nvl_button_xpos = 20
+
+
+
