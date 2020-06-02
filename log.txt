@@ -1,40 +1,39 @@
-Tue Jun 02 15:19:32 2020
+Tue Jun 02 15:29:59 2020
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
  
 
-Bootstrap to the start of init.init took 0.08s
-Early init took 0.01s
+Bootstrap to the start of init.init took 0.11s
+Early init took 0.00s
 Loader init took 0.06s
 Loading error handling took 0.04s
-Loading script took 0.67s
-Loading save slot metadata. took 0.05s
+Loading script took 0.17s
+Loading save slot metadata. took 0.03s
 Loading persistent took 0.00s
 Importing _renpysteam: ImportError('No module named _renpysteam',)
 0
-Running init code took 0.18s
-Loading analysis data took 0.06s
-Analyze and compile ATL took 0.00s
+Running init code took 0.29s
+Loading analysis data took 0.15s
+Analyze and compile ATL took 0.01s
 Index archives took 0.00s
-Backing up script files to 'C:\\Users\\ma-cl\\AppData\\Roaming/RenPy/backups\\VN_PST':
-Dump and make backups. took 0.13s
+Dump and make backups. took 0.14s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
 Initial gc. took 0.03s
 DPI scale factor: 1.500000
-Creating interface object took 0.29s
+Creating interface object took 0.15s
 Cleaning stores took 0.00s
-Init translation took 0.06s
-Build styles took 0.02s
-Load screen analysis took 0.00s
-Analyze screens took 0.10s
-Save screen analysis took 0.23s
-Prepare screens took 0.22s
-Save pyanalysis. took 0.57s
-Save bytecode. took 0.18s
+Init translation took 0.05s
+Build styles took 0.01s
+Load screen analysis took 0.42s
+Analyze screens took 0.00s
+Save screen analysis took 0.00s
+Prepare screens took 0.11s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.12s
 Running _start took 0.00s
 Performance test:
-Interface start took 0.10s
+Interface start took 0.05s
 Couldn't import angle renderer:
 Traceback (most recent call last):
   File "C:\Users\ma-cl\Downloads\renpy\renpy-7.3.5-sdk\renpy\display\core.py", line 1939, in make_draw
@@ -298,20 +297,14 @@ Texture testing:
 - 2048px textures work.
 Root FBO is: 0
 FBO Maximum Texture Size: 2048
-Total time until interface ready: 6.03999996185s
+Total time until interface ready: 3.79099988937s
 - Target is 5 frames in 0.333333333333 seconds.
 - Frame drawn at 0.000000 seconds.
 - Frame drawn at 0.020949 seconds.
-- Frame drawn at 0.097949 seconds.
-- Frame drawn at 0.512949 seconds.
-- Frame drawn at 0.530949 seconds.
-- 0.530949 seconds to render 5 frames.
-- Frame drawn at 0.588949 seconds.
-- 0.568000 seconds to render 5 frames.
-- Frame drawn at 0.617949 seconds.
-- 0.520000 seconds to render 5 frames.
-- Frame drawn at 0.675949 seconds.
-- 0.163000 seconds to render 5 frames.
+- Frame drawn at 0.145949 seconds.
+- Frame drawn at 0.150949 seconds.
+- Frame drawn at 0.233949 seconds.
+- 0.233949 seconds to render 5 frames.
 Dormitory
 Dormitory
 Dormitory
@@ -338,53 +331,55 @@ Library
 0
 []
 0
-homme_clicked
-homme_clicked
-homme_clicked
-homme_clicked
+Library
+0
+[]
+0
+Library
+0
+[]
+0
+0
+Library
+0
+[]
+0
+0
+Library
+Library
+0
+[]
+0
+Library
+0
+[]
+0
+0
+Library
+0
+[]
+0
+Library
+0
+[]
+0
+0
+Library
+Library
 0
 []
 0
 Library
 Library
 Library
-0
-[]
-0
 Library
 Library
-0
-[]
-0
 Library
 Library
-Dormitory
-Dormitory
-Dormitory
-Dormitory
-0
-[]
-0
-Dormitory
-Dormitory
-Dormitory
-0
-[]
-0
-Dormitory
-Dormitory
-Dormitory
-Dormitory
-Dormitory
-Dormitory
-Dormitory
-Dormitory
-Dormitory
-Dormitory
-Dormitory
-Dormitory
-Dormitory
-Dormitory
+Library
+Library
+Library
+Library
 0
 []
 0
