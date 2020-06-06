@@ -4,7 +4,7 @@ image Suzanne = "sylvie green surprised.png"
 ##--------------------------------------------------------------------
 
 ##UI IMAGES
-image CampusMap = im.Scale("Plan_Gameplay_campus.jpg", 400, 234) ##Image is bigger than what we need so we display it in another size.
+image CampusMap = im.Scale("Map.png", 400, 234) ##Image is bigger than what we need so we display it in another size.
 image BoutonDeplacement = "BoutonDeplacement.png" #Doublon plus bas 
 image carnet = "images/carnet.png"
 image carnet_hover = "carnet_hover.png"
@@ -14,7 +14,9 @@ image displacement = "BoutonDeplacement.png" #N'en garder qu'un
 ##---------------------------------------------------------------------
 ##BACKGROUND IMAGE 
 image Library = "bg club.jpg"
-image Dormitory = "bg lecturehall.jpg"
+image Dormitory = "bg lecturehall.jpg" ##change image NASSIM 
+image Cafeteria = "bg club.jpg" ## changer d'image NASSIM 
+image LectureHall = "bg lecturehall.jpg"
 ##----------------------------------------------------------------------
 
 init python:
@@ -26,17 +28,46 @@ init python:
 screen Map(): 
     zorder 10 ## We add an order to the screen to indicate which one should be display in front or else 
     add 'BoutonDeplacement' at displacement_btn_position
+    ##add 'CampusMap' xpos 20 ypos 250 
     
-    imagemap : 
-        alpha True
-        idle 'CampusMap' xpos 20 ypos 250 ##Image displayed and its location 
+    ##imagemap : 
+      #  alpha True
+       # idle 'CampusMap' xpos 20 ypos 250 ##Image displayed and its location 
         
-        hotspot(12,10,190,54) action Return("Dormitory")
-        hotspot(253, 10, 120, 58) action Return("Library")
+        #hotspot(12,10,190,54) action Return("Dormitory")
+        #hotspot(253, 10, 120, 58) action Return("Library")
         
         ##Modifier les coordonnées avec le bouton X pour fermer la carte
-        hotspot(12,100 , 190, 200) action Return("None")
-
+        #hotspot(12,100 , 190, 200) action Return("None")
+   
+    imagemap: 
+        idle 'CampusMap' xpos 20 ypos 250 
+        
+        imagebutton:
+            focus_mask True 
+            idle "Dormitory_idle.png"
+            hover "DormitoryHover.png"
+            action Return("Dormitory")
+         
+        imagebutton: 
+            focus_mask True 
+            idle "LectureHall_idle.png"
+            hover "LectureHallHover.png" 
+            action Return("LectureHall")
+        
+        imagebutton: 
+            focus_mask True 
+            idle "Cafeteria_idle.png"
+            hover "CafeteriaHover.png" 
+            action Return("Cafeteria")
+        
+        imagebutton: 
+            focus_mask True
+            idle "Map_idle_cross.png"
+            hover "Map_red_cross.png" 
+            action Return("None")
+            
+        
         
 screen Dormitory(): 
     ##layer "background"
@@ -47,13 +78,25 @@ screen Dormitory():
     
     
         
-        
+##A ENLEVER        
 screen Library(): 
     ##layer "background"
     zorder 0
     window:
         style "gm_root"
         add 'Library' xalign 0.0 yalign 0.0
+        
+screen Cafeteria(): 
+    zorder 0
+    window: 
+        style "gm_root"
+        add 'Cafeteria' xalign 0.0 yalign 0.0
+        
+screen LectureHall(): 
+    zorder 0
+    window: 
+        style "gm_root"
+        add 'LectureHall' xalign 0.0 yalign 0.0
         
         
 ##Nico's screens 

@@ -1,22 +1,61 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While running game code:
+While loading <'Image' u'Doromitory_idle.png'>:
+  File "game/Map.rpy", line 40, in script call
+    m "Dormitory Babyyyy"
+  File "game/Map.rpy", line 40, in script call
+    m "Dormitory Babyyyy"
   File "game/Map.rpy", line 42, in script call
     $renpy.pause(hard=True)
-  File "game/script.rpy", line 121, in script
-    call screen buttons()
+  File "game/Map.rpy", line 42, in script call
+    $renpy.pause(hard=True)
+  File "game/Map.rpy", line 42, in script call
+    $renpy.pause(hard=True)
+  File "game/Map.rpy", line 42, in script call
+    $renpy.pause(hard=True)
+  File "game/Map.rpy", line 42, in script call
+    $renpy.pause(hard=True)
+  File "game/Map.rpy", line 42, in script call
+    $renpy.pause(hard=True)
+  File "game/Map.rpy", line 42, in script call
+    $renpy.pause(hard=True)
+  File "game/Map.rpy", line 42, in script call
+    $renpy.pause(hard=True)
+  File "game/Map.rpy", line 42, in script call
+    $renpy.pause(hard=True)
+  File "game/Map.rpy", line 4, in script
+    call screen Map #Use call as it returns a value
   File "renpy/common/000statements.rpy", line 531, in execute_call_screen
     store._return = renpy.call_screen(name, *args, **kwargs)
-Exception: Screen buttons is not known.
-
+IOError: Couldn't find file 'Doromitory_idle.png'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
+  File "game/Map.rpy", line 40, in script call
+    m "Dormitory Babyyyy"
+  File "game/Map.rpy", line 40, in script call
+    m "Dormitory Babyyyy"
   File "game/Map.rpy", line 42, in script call
     $renpy.pause(hard=True)
-  File "game/script.rpy", line 121, in script
-    call screen buttons()
+  File "game/Map.rpy", line 42, in script call
+    $renpy.pause(hard=True)
+  File "game/Map.rpy", line 42, in script call
+    $renpy.pause(hard=True)
+  File "game/Map.rpy", line 42, in script call
+    $renpy.pause(hard=True)
+  File "game/Map.rpy", line 42, in script call
+    $renpy.pause(hard=True)
+  File "game/Map.rpy", line 42, in script call
+    $renpy.pause(hard=True)
+  File "game/Map.rpy", line 42, in script call
+    $renpy.pause(hard=True)
+  File "game/Map.rpy", line 42, in script call
+    $renpy.pause(hard=True)
+  File "game/Map.rpy", line 42, in script call
+    $renpy.pause(hard=True)
+  File "game/Map.rpy", line 4, in script
+    call screen Map #Use call as it returns a value
   File "C:\Users\ma-cl\Downloads\renpy\renpy-7.3.5-sdk\renpy\ast.py", line 1949, in execute
     self.call("execute")
   File "C:\Users\ma-cl\Downloads\renpy\renpy-7.3.5-sdk\renpy\ast.py", line 1937, in call
@@ -25,14 +64,81 @@ Full traceback:
     return method(parsed, *args, **kwargs)
   File "renpy/common/000statements.rpy", line 531, in execute_call_screen
     store._return = renpy.call_screen(name, *args, **kwargs)
-  File "C:\Users\ma-cl\Downloads\renpy\renpy-7.3.5-sdk\renpy\exports.py", line 2900, in call_screen
-    show_screen(_screen_name, _transient=True, *args, **kwargs)
-  File "C:\Users\ma-cl\Downloads\renpy\renpy-7.3.5-sdk\renpy\display\screen.py", line 1107, in show_screen
-    raise Exception("Screen %s is not known.\n" % (name[0],))
-Exception: Screen buttons is not known.
-
+  File "C:\Users\ma-cl\Downloads\renpy\renpy-7.3.5-sdk\renpy\exports.py", line 2905, in call_screen
+    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
+  File "C:\Users\ma-cl\Downloads\renpy\renpy-7.3.5-sdk\renpy\ui.py", line 297, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "C:\Users\ma-cl\Downloads\renpy\renpy-7.3.5-sdk\renpy\display\core.py", line 2702, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, **kwargs)
+  File "C:\Users\ma-cl\Downloads\renpy\renpy-7.3.5-sdk\renpy\display\core.py", line 3194, in interact_core
+    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
+  File "C:\Users\ma-cl\Downloads\renpy\renpy-7.3.5-sdk\renpy\display\core.py", line 2094, in draw_screen
+    renpy.config.screen_height,
+  File "renpy/display/render.pyx", line 490, in renpy.display.render.render_screen (gen\renpy.display.render.c:6805)
+    rv = render(root, width, height, st, st)
+  File "renpy/display/render.pyx", line 259, in renpy.display.render.render (gen\renpy.display.render.c:3520)
+    rv = d.render(widtho, heighto, st, at)
+  File "C:\Users\ma-cl\Downloads\renpy\renpy-7.3.5-sdk\renpy\display\layout.py", line 722, in render
+    surf = render(child, width, height, cst, cat)
+  File "renpy/display/render.pyx", line 166, in renpy.display.render.render (gen\renpy.display.render.c:4075)
+    cpdef render(d, object widtho, object heighto, double st, double at):
+  File "renpy/display/render.pyx", line 259, in renpy.display.render.render (gen\renpy.display.render.c:3520)
+    rv = d.render(widtho, heighto, st, at)
+  File "C:\Users\ma-cl\Downloads\renpy\renpy-7.3.5-sdk\renpy\display\layout.py", line 722, in render
+    surf = render(child, width, height, cst, cat)
+  File "renpy/display/render.pyx", line 166, in renpy.display.render.render (gen\renpy.display.render.c:4075)
+    cpdef render(d, object widtho, object heighto, double st, double at):
+  File "renpy/display/render.pyx", line 259, in renpy.display.render.render (gen\renpy.display.render.c:3520)
+    rv = d.render(widtho, heighto, st, at)
+  File "C:\Users\ma-cl\Downloads\renpy\renpy-7.3.5-sdk\renpy\display\layout.py", line 722, in render
+    surf = render(child, width, height, cst, cat)
+  File "renpy/display/render.pyx", line 166, in renpy.display.render.render (gen\renpy.display.render.c:4075)
+    cpdef render(d, object widtho, object heighto, double st, double at):
+  File "renpy/display/render.pyx", line 259, in renpy.display.render.render (gen\renpy.display.render.c:3520)
+    rv = d.render(widtho, heighto, st, at)
+  File "C:\Users\ma-cl\Downloads\renpy\renpy-7.3.5-sdk\renpy\display\screen.py", line 675, in render
+    child = renpy.display.render.render(self.child, w, h, st, at)
+  File "renpy/display/render.pyx", line 166, in renpy.display.render.render (gen\renpy.display.render.c:4075)
+    cpdef render(d, object widtho, object heighto, double st, double at):
+  File "renpy/display/render.pyx", line 259, in renpy.display.render.render (gen\renpy.display.render.c:3520)
+    rv = d.render(widtho, heighto, st, at)
+  File "C:\Users\ma-cl\Downloads\renpy\renpy-7.3.5-sdk\renpy\display\layout.py", line 722, in render
+    surf = render(child, width, height, cst, cat)
+  File "renpy/display/render.pyx", line 166, in renpy.display.render.render (gen\renpy.display.render.c:4075)
+    cpdef render(d, object widtho, object heighto, double st, double at):
+  File "renpy/display/render.pyx", line 259, in renpy.display.render.render (gen\renpy.display.render.c:3520)
+    rv = d.render(widtho, heighto, st, at)
+  File "C:\Users\ma-cl\Downloads\renpy\renpy-7.3.5-sdk\renpy\display\layout.py", line 722, in render
+    surf = render(child, width, height, cst, cat)
+  File "renpy/display/render.pyx", line 166, in renpy.display.render.render (gen\renpy.display.render.c:4075)
+    cpdef render(d, object widtho, object heighto, double st, double at):
+  File "renpy/display/render.pyx", line 259, in renpy.display.render.render (gen\renpy.display.render.c:3520)
+    rv = d.render(widtho, heighto, st, at)
+  File "C:\Users\ma-cl\Downloads\renpy\renpy-7.3.5-sdk\renpy\display\layout.py", line 722, in render
+    surf = render(child, width, height, cst, cat)
+  File "renpy/display/render.pyx", line 166, in renpy.display.render.render (gen\renpy.display.render.c:4075)
+    cpdef render(d, object widtho, object heighto, double st, double at):
+  File "renpy/display/render.pyx", line 259, in renpy.display.render.render (gen\renpy.display.render.c:3520)
+    rv = d.render(widtho, heighto, st, at)
+  File "C:\Users\ma-cl\Downloads\renpy\renpy-7.3.5-sdk\renpy\display\behavior.py", line 774, in render
+    rv = super(Button, self).render(width, height, st, at)
+  File "C:\Users\ma-cl\Downloads\renpy\renpy-7.3.5-sdk\renpy\display\layout.py", line 1127, in render
+    st, at)
+  File "renpy/display/render.pyx", line 166, in renpy.display.render.render (gen\renpy.display.render.c:4075)
+    cpdef render(d, object widtho, object heighto, double st, double at):
+  File "renpy/display/render.pyx", line 259, in renpy.display.render.render (gen\renpy.display.render.c:3520)
+    rv = d.render(widtho, heighto, st, at)
+  File "C:\Users\ma-cl\Downloads\renpy\renpy-7.3.5-sdk\renpy\display\im.py", line 583, in render
+    return cache.get(self, render=True)
+  File "C:\Users\ma-cl\Downloads\renpy\renpy-7.3.5-sdk\renpy\display\im.py", line 266, in get
+    surf = image.load()
+  File "C:\Users\ma-cl\Downloads\renpy\renpy-7.3.5-sdk\renpy\display\im.py", line 628, in load
+    surf = renpy.display.pgrender.load_image(renpy.loader.load(self.filename), self.filename)
+  File "C:\Users\ma-cl\Downloads\renpy\renpy-7.3.5-sdk\renpy\loader.py", line 576, in load
+    raise IOError("Couldn't find file '%s'." % name)
+IOError: Couldn't find file 'Doromitory_idle.png'.
 
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
 test 1.0
-Sat May 09 17:42:25 2020
+Sat Jun 06 03:14:21 2020

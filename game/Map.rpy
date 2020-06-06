@@ -52,3 +52,23 @@ label Library:
     jump DiscussionType
 
     $renpy.pause(hard=True)
+    
+label LectureHall:
+    ###PREREQUIS
+    $name_of_label = current_label
+    show screen Menu(0) ## Put 0 as we don't want the "take notes" button to be clickable 
+    ##End Prerequis
+        
+    m "LectureHall"
+
+    $renpy.pause(hard=True)
+
+label Cafeteria:
+    ###PREREQUIS
+    $name_of_label = current_label
+    show screen Menu(0) ## Put 0 as we don't want the "take notes" button to be clickable 
+    ##End Prerequis
+        
+    m "Cafeteria"
+
+    $renpy.pause(hard=True)
