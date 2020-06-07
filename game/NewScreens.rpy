@@ -1,105 +1,105 @@
-﻿##CHARACTER IMAGES 
+﻿##CHARACTER IMAGES
 image John = "sylvie blue giggle.png"
 image Suzanne = "sylvie green surprised.png"
 ##--------------------------------------------------------------------
 
 ##UI IMAGES
 image CampusMap = im.Scale("Map.png", 400, 234) ##Image is bigger than what we need so we display it in another size.
-image BoutonDeplacement = "BoutonDeplacement.png" #Doublon plus bas 
+image BoutonDeplacement = "BoutonDeplacement.png" #Doublon plus bas
 image carnet = "images/carnet.png"
 image carnet_hover = "carnet_hover.png"
 image take_notes_button = "images/Take_Notes_button_idle.png"
-image displacement = "BoutonDeplacement.png" #N'en garder qu'un 
+image displacement = "BoutonDeplacement.png" #N'en garder qu'un
 
 ##---------------------------------------------------------------------
-##BACKGROUND IMAGE 
+##BACKGROUND IMAGE
 image Library = "bg club.jpg"
-image Dormitory = "bg lecturehall.jpg" ##change image NASSIM 
-image Cafeteria = "bg club.jpg" ## changer d'image NASSIM 
+image Dormitory = "bg lecturehall.jpg" ##change image NASSIM
+image Cafeteria = "bg club.jpg" ## changer d'image NASSIM
 image LectureHall = "bg lecturehall.jpg"
 ##----------------------------------------------------------------------
 
 init python:
 
     config.tag_layer['bg'] = 'background' # all images with the tag 'bg' are put on layer 'bg'
-        
+
 ##Marine's Screens
-        
-screen Map(): 
-    zorder 10 ## We add an order to the screen to indicate which one should be display in front or else 
+
+screen Map():
+    zorder 10 ## We add an order to the screen to indicate which one should be display in front or else
     add 'BoutonDeplacement' at displacement_btn_position
-    ##add 'CampusMap' xpos 20 ypos 250 
-    
-    ##imagemap : 
+    ##add 'CampusMap' xpos 20 ypos 250
+
+    ##imagemap :
       #  alpha True
-       # idle 'CampusMap' xpos 20 ypos 250 ##Image displayed and its location 
-        
+       # idle 'CampusMap' xpos 20 ypos 250 ##Image displayed and its location
+
         #hotspot(12,10,190,54) action Return("Dormitory")
         #hotspot(253, 10, 120, 58) action Return("Library")
-        
+
         ##Modifier les coordonnées avec le bouton X pour fermer la carte
         #hotspot(12,100 , 190, 200) action Return("None")
-   
-    imagemap: 
-        idle 'CampusMap' xpos 20 ypos 250 
-        
+
+    imagemap:
+        idle 'CampusMap' xpos 20 ypos 250
+
         imagebutton:
-            focus_mask True 
+            focus_mask True
             idle "Dormitory_idle.png"
             hover "DormitoryHover.png"
             action Return("Dormitory")
-         
-        imagebutton: 
-            focus_mask True 
+
+        imagebutton:
+            focus_mask True
             idle "LectureHall_idle.png"
-            hover "LectureHallHover.png" 
+            hover "LectureHallHover.png"
             action Return("LectureHall")
-        
-        imagebutton: 
-            focus_mask True 
+
+        imagebutton:
+            focus_mask True
             idle "Cafeteria_idle.png"
-            hover "CafeteriaHover.png" 
+            hover "CafeteriaHover.png"
             action Return("Cafeteria")
-        
-        imagebutton: 
+
+        imagebutton:
             focus_mask True
             idle "Map_idle_cross.png"
-            hover "Map_red_cross.png" 
+            hover "Map_red_cross.png"
             action Return("None")
-            
-        
-        
-screen Dormitory(): 
+
+
+
+screen Dormitory():
     ##layer "background"
     zorder 0
     window:
         style "gm_root"
         add 'Dormitory' xalign 0.0 yalign 0.0
-    
-    
-        
-##A ENLEVER        
-screen Library(): 
+
+
+
+##A ENLEVER
+screen Library():
     ##layer "background"
     zorder 0
     window:
         style "gm_root"
         add 'Library' xalign 0.0 yalign 0.0
-        
-screen Cafeteria(): 
+
+screen Cafeteria():
     zorder 0
-    window: 
+    window:
         style "gm_root"
         add 'Cafeteria' xalign 0.0 yalign 0.0
-        
-screen LectureHall(): 
+
+screen LectureHall():
     zorder 0
-    window: 
+    window:
         style "gm_root"
         add 'LectureHall' xalign 0.0 yalign 0.0
-        
-        
-##Nico's screens 
+
+
+##Nico's screens
 
 transform carnet_position:
             align(1.01, 0.72)
@@ -108,29 +108,29 @@ transform take_note_button_position:
 transform displacement_btn_position:
             align(0.05,0.73)
 
-screen Menu(takeNotesClickable): 
+screen Menu(takeNotesClickable):
         zorder 10
         $ print(name_of_label)
 
         #show carnet renpy.display.behavior.ImageButton("c")
-        
+
         imagebutton:
                 idle "carnet"
                 hover "carnet_hover"
-                at carnet_position 
+                at carnet_position
                 focus_mask True
                 action [Show("carnet_screen")]
-        
-        if takeNotesClickable == 1 : 
+
+        if takeNotesClickable == 1 :
             imagebutton:
                     idle "take_notes_button"
                     hover "take_notes_button_hover"
-                    at take_note_button_position 
+                    at take_note_button_position
                     focus_mask True
                     action [Function(notelist.add_notes,name_of_label), Function(renpy.invoke_in_new_context,renpy.say,centered,"new entry added to notebook",True)]
-        if takeNotesClickable == 0 : 
+        if takeNotesClickable == 0 :
             add 'take_notes_button' at take_note_button_position
-            
+
         imagebutton:
                 idle "displacement"
                 hover "BoutonDeplacement_hover.png"
@@ -332,9 +332,9 @@ init -1 python:
         def remove_notes(self, num_memo):
             self.notes.pop(num_memo)
         def get_notes(self,i):
-            return self.notes[i]  
+            return self.notes[i]
 
-##Aure's screens 
+##Aure's screens
 
 init python:
 
@@ -402,19 +402,47 @@ screen buttons():
                 ypos 80
                 xsize 280
                 ysize 650
-                
+
     imagebutton:
                 idle "sprite female dark hair Neu02_idle.png"
                 hover "sprite female dark hair Neu02_hover.png"
                 action Return("femme")
-                xpos 900                
+                xpos 900
                 ypos 80
                 xsize 280
                 ysize 650
 
     #$ result = ui.interact()
 
-        
 
-    
-    
+screen characters_interactions_screen(names,mode,labelname):
+    $x = 10
+    $y= 100
+    zorder 5
+    $characters = names.split(',')
+    $print(characters)
+    for _names in characters:
+        if(mode == "normal_idle"):
+            $print(_names)
+            if(_names == "sadiq" or _names == "charles"):
+                $y= 150
+                imagebutton:
+                    idle _names + " normal_idle"
+                    action Return(labelname +"_"+_names)
+                    focus_mask True
+                    xpos x
+                    ypos y
+                    xsize 280
+                    ysize 650
+                $y= 100
+            else:
+                imagebutton:
+                    idle _names + " normal_idle"
+                    action Return(labelname +"_"+_names)
+                    focus_mask True
+                    xpos x
+                    ypos y
+                    xsize 280
+                    ysize 650
+            $x += 230
+#TODO add other mode to manage other character face expression
