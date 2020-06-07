@@ -12,6 +12,7 @@ define juan = Character("Juan")
 define brice = Character("Brice")
 define sadiq = Character("Sadiq")
 define charles = Character("Charles")
+define mc_meuf = Character("Love interest")
 ##--------------------------------------
 
 ##VARIABLE
@@ -23,6 +24,9 @@ init python:
 
     config.tag_layer['boy'] = 'screens' # all images with the tag 'bg' are put on layer 'bg'
     config.tag_layer['female'] = 'screens' # all images with the tag 'bg' are put on layer 'bg'
+    
+    vpunch = Move((0, 10), (0, -10), .10, bounce=True, repeat=True, delay=1.275)#0.275 de base
+    hpunch = Move((15, 0), (-15, 0), .10, bounce=True, repeat=True, delay=.275)
 
 ##----------------------------------------
 
@@ -149,6 +153,54 @@ label intro:
     show epstein normal_idle
     epstein "Ok everyone, to your seats, we’re gonna start the course. And don’t even hope we’re gonna talk about the holidays, you’ve got a lot to learn before the end of the year, so let’s get into it right now."
     hide epstein normal_idle
+    
+    ###added from here in label intro by marine## erase com. if it's well done 
+    scene school hallway with fade # need 
+    pause 1 
+
+    mc "And here I am, wandering about in the university’s hallways while the sun is bright out and other students are enjoying their day. Even I’m wondering why i’m here."
+    mc "Why is it that I end up spending my afternoon going to my math teacher’s office to ask him for help with his own course."
+    mc "While it is true that maths never really were my strong suit, this semester’s been the absolute worse so far."
+    mc "Mr Epstein really is what the rumors depicted him as, and more."
+    mc "So anyway I’m lost. My airhead brain can’t remember where Epstein’s bloody office is."
+    mc "Let’s think this through, right now i’m in B7, i’m quite sure his office was somewhere around here."
+    mc "Ok so now if I turn right, the math department should be here right?"
+    mc "Aaaaand it’s not, DAMMIT!"
+    
+    "AAAAAAAAAAAAHH" with vpunch
+    
+    
+    mc "What the hell was that!? A scream ?!"
+    mc "As I turn around, I see the sign above the opposite hallway: mathematics department."
+    mc "Well, here it is then! But what the heck was that noise? It came from there."
+    mc "As I reach the mid-section of the hallway, I see a notice board on the door to my left: Mr Epstein, Aggregate Teacher"
+    mc "Well finally! Here it is!"
+    mc "I’m pretty sure the scream came from here though… Maybe he fell and broke a shelf or something, he must be quite hurt in here from the sound of it. Should I maybe come back later?"
+    mc "Eh? Whatever, i’m already wasting my afternoon being here, better at least help him out, maybe i’ll get something out of it who knows."
+    mc "I slowly push the door open…"
+
+    ##door_sfx
+    m "ADD HERE DOOR SFX hehehehehehe Line 179"
+    ##dramatic_reveal_sfx
+    scene epstein_dead
+
+    mc "He’s not alone ! He is with a girl ? What are they doing together ? What !?"
+    mc "It’s ‘mc_meuf’ ! What are they doing on the ground so close to each other ? Did he hurt her ?! That bastard ! I repress my surging anger and ask"
+    mc "What’s happening here ?"
+    mc_meuf "I...I..tried to st...stop him. He was to fast."
+    mc "What are you talking about, what happened ?"
+    mc "As I look around I see that Epstein is still on the ground. He’s not moving. Is he …?"
+    mc_meuf "He tri..tried to kill himself and I..I wanted to stop but he was to fast !"
+    mc_meuf "I don’t know what to do now.."
+    mc "Oh my god, oh my god, I can’t believe it" 
+    mc "It feels surreal, I can’t believe it’s happening right now, I’m having a hard time breathing, my palms are sweaty, knees getting weak, arms are heavy"
+    mc "I’m gonna vomit on my sweater already"
+    mc_meuf "We can’t stay here, we have to get out.. Maybe we should call someone"
+    mc "I hear her mumbling something and helping me move in the hall before I lose consciousness."
+
+    ### end added by marine 
+    
+    
     return
 #zaeaz
 
@@ -288,6 +340,6 @@ label intro_charles:
     charles "Hmph, alright. Not that I wanted to tell you that anyway, peasant…"
     mc "… Let’s ignore that last sentence, he’s like that with everyone…"
     mc "Now who to talk to?"
-    show charles normal_idle
+    hide charles normal_idle
     #Ajouter les infos de Charles dans le carnet, et display que ça a été fait.
     return 0
