@@ -155,7 +155,7 @@ init:
         tag item_descriptions
         modal False
         #here can make a list of object composed of each clues with each their description and according to param of the screen use the fct to look through the list and find the correct item available to player and display its information
-        text "A very intereting and absolutly not pointless\n placeholder because we need one\n ref=[item_ref]" size 16 xalign 0.8 yalign 0.2
+        text "Place holder here ref=[item_ref]" size 16 xalign 0.8 yalign 0.2
 
     screen notebook_clues_screen:
         $x = 0.15
@@ -171,32 +171,32 @@ init:
             xfill 940
             yfill 660
 
-            text "CLUES" color "#000" xalign 0.15 yalign 0.1
+            text "CLUES" color "#000" xalign 0.18 yalign 0.08
 
-            for clue in cluelist:
-                imagebutton:
-                    idle clue.get_name + ".png"
-                    focus_mask True
-                    xalign x
-                    yalign y
-                    action [Show(clue.get_desc, item_ref=clue.get_name)]
-                $x += 0.10
+            #for clue in cluelist:
+            #    imagebutton:
+            #        idle clue.get_name + ".png"
+            #        focus_mask True
+            #        xalign x
+            #        yalign y
+            #        action [Show(clue.get_desc, item_ref=clue.get_name)]
+            #    $x += 0.10
                 #if(x > val):
                 #    $x = 0.15
                 #    $y += 0.1
 
             imagebutton:
-                idle "KC_1.png"
+                idle "TBD_icon.png"
                 focus_mask True
-                xalign 0.15
-                yalign 0.2
+                xalign 0.20
+                yalign 0.15
                 action [Show("item_descriptions", item_ref="KC_1")]
 
             imagebutton:
-                idle "KC_angeury.png"
+                idle "TBD_icon.png"
                 focus_mask True
-                xalign 0.25
-                yalign 0.2
+                xalign 0.30
+                yalign 0.15
                 action [Show("item_descriptions", item_ref="KC_angueury")]
 
     screen notebook_character_screen:
@@ -210,22 +210,33 @@ init:
             xfill 940
             yfill 660
 
-            text "CHARACTERS" color "#000" xalign 0.15 yalign 0.1
+            text "CHARACTERS" color "#000" xalign 0.18 yalign 0.08
 
             imagebutton:
                 idle "characters/Epstein_icon.png"
                 focus_mask True
-                xalign 0.15
-                yalign 0.2
+                xalign 0.18
+                yalign 0.15
 
+            imagebutton:
+                idle "josh_icon.png"
+                focus_mask True
+                xalign 0.30
+                yalign 0.15
+
+            imagebutton:
+                idle "juan_icon.png"
+                focus_mask True
+                xalign 0.40
+                yalign 0.15
     screen notebook_notes_screen:
         zorder 10
         $d = {'menu_verif' : 'True'}
         tag notebook_screen
         modal False
         $i = 0
-        $x = 0.15
-        $y= 0.2
+        $x = 0.30
+        $y= 0.15
         $print(i)
 
         fixed:
@@ -234,7 +245,7 @@ init:
             xfill 940
             yfill 660
 
-            text "NOTES" color "#000" xalign 0.15 yalign 0.1
+            text "NOTES" color "#000" xalign 0.18 yalign 0.08
 
             for note in notelist.notes:
                 textbutton note action [Function(renpy.call_replay,note)] xalign x yalign y
@@ -257,7 +268,7 @@ init:
             yfill True
             #add imagelist.get_img() xalign 0.5 yalign 0.5
             #text "CARNET" color "#000" xalign 0.5 yalign 0.05
-            add "notebook_menu_bg" xalign 0.5 yalign 0.5
+            add "notebook_menu_bg_final_final" xalign 0.42 yalign 0.45
 
             imagebutton:
                 idle "exit_button_idle"
@@ -269,32 +280,32 @@ init:
                 action [Hide("carnet_screen"),Hide("notebook_screen"),Hide("item_descriptions")]
 
             imagebutton:
-                idle "an_image3"
-                hover "an_image3_hover"
-                xalign 0.026
-                yalign 0.409
-                focus_mask True
+                idle "notes_taken_button_idle"
+                hover "notes_taken_button_hover"
+                xalign 0.070
+                yalign 0.450
+                focus_mask None
                 action [Hide("item_descriptions"), Show("notebook_notes_screen")]
 
             imagebutton:
                 idle "characters_menu_icon_idle"
                 hover "characters_menu_icon_hover_resize"
-                xalign 0.031
-                yalign 0.061
+                xalign 0.070
+                yalign 0.067
                 focus_mask True
                 action [Hide("item_descriptions"), Show("notebook_character_screen")]
 
             imagebutton:
                 idle "notebook_menu_icon_idle_resize"
                 hover "notebook_menu_icon_hover_resize"
-                xalign 0.026
-                yalign 0.235
+                xalign 0.070
+                yalign 0.250
                 focus_mask True
                 action [Show("notebook_clues_screen"),Hide("notebook_character_screen")]
 
-            add "notebook_button_border" xalign 0.026 yalign 0.055
-            add "notebook_button_border" xalign 0.026 yalign 0.235
-            add "notebook_button_border" xalign 0.026 yalign 0.415
+            #add "notebook_button_border" xalign 0.026 yalign 0.055
+            #add "notebook_button_border" xalign 0.026 yalign 0.235
+            #add "notebook_button_border" xalign 0.026 yalign 0.415
             #imagebutton:
             #    idle "arrow_left"
             #    hover "arrow_left_hover"
@@ -453,7 +464,7 @@ screen buttons():
 
 screen characters_interactions_screen(names,mode,labelname):
     $x = 10
-    $y= 100
+    $y= 160
     zorder 5
     $characters = names.split(',')
     $print(characters)
@@ -462,15 +473,16 @@ screen characters_interactions_screen(names,mode,labelname):
             $print(_names)
             if(_names == "sadiq" or _names == "charles"):
                 $y= 150
+                $x -= 50
                 imagebutton:
                     idle _names + " normal_idle"
                     action Return(labelname +"_"+_names)
                     focus_mask True
                     xpos x
                     ypos y
-                    xsize 280
-                    ysize 650
-                $y= 100
+                    xsize 260
+                    ysize 570
+                $y= 160
             else:
                 imagebutton:
                     idle _names + " normal_idle"
