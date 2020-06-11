@@ -108,7 +108,7 @@ transform take_note_button_position:
 transform displacement_btn_position:
             align(0.05,0.73)
 
-screen Menu(takeNotesClickable):
+screen Menu(takeNotesClickable,displacementClickable):
         zorder 10
         $ print(name_of_label)
 
@@ -131,12 +131,15 @@ screen Menu(takeNotesClickable):
         if takeNotesClickable == 0 :
             add 'take_notes_button' at take_note_button_position
 
-        imagebutton:
-                idle "displacement"
-                hover "BoutonDeplacement_hover.png"
-                at displacement_btn_position
-                focus_mask True
-                action [Function(renpy.call,"Map")]
+        if(displacementClickable ==1):
+            imagebutton:
+                    idle "displacement"
+                    hover "BoutonDeplacement_hover.png"
+                    at displacement_btn_position
+                    focus_mask True
+                    action [Function(renpy.call,"Map")]
+        else:
+            add 'displacement' at displacement_btn_position
 
 init:
     $ imagelist = ImageList(0)
@@ -145,7 +148,7 @@ init:
     $ print(imagelist.indeximg)
     $ killscreen = 0
     $ notelist = NoteList()
-
+    $ cluelist = ArrayClue()
 
     screen item_descriptions(item_ref=""):
         zorder 10
@@ -155,10 +158,12 @@ init:
         text "A very intereting and absolutly not pointless\n placeholder because we need one\n ref=[item_ref]" size 16 xalign 0.8 yalign 0.2
 
     screen notebook_clues_screen:
+        $x = 0.15
+        $y = 0.2
+        #look when after exceeding a certain value of x for which all new image displayed goes out of screen, we increment y
         zorder 10
         tag notebook_screen
         modal False
-
         #use frame when ui background will be made
         fixed:
             xalign 0.7
@@ -167,6 +172,18 @@ init:
             yfill 660
 
             text "CLUES" color "#000" xalign 0.15 yalign 0.1
+
+            for clue in cluelist:
+                imagebutton:
+                    idle clue.get_name + ".png"
+                    focus_mask True
+                    xalign x
+                    yalign y
+                    action [Show(clue.get_desc, item_ref=clue.get_name)]
+                $x += 0.10
+                #if(x > val):
+                #    $x = 0.15
+                #    $y += 0.1
 
             imagebutton:
                 idle "KC_1.png"
@@ -299,7 +316,7 @@ init -1 python:
     def afct():
         renpy.hide_screen("oui")
 
-    class ImageList:
+    class ImageList(object):
         def __init__(self,arg):
             self.indeximg = arg
             self.images = []
@@ -322,7 +339,7 @@ init -1 python:
         def get_img(self):
             return self.images[self.indeximg]
 
-    class NoteList:
+    class NoteList(object):
         def __init__(self,arg = 0):
             self.indexnote = arg
             self.notes = []
@@ -333,6 +350,25 @@ init -1 python:
             self.notes.pop(num_memo)
         def get_notes(self,i):
             return self.notes[i]
+
+    class Clue(object):
+        def __init__(self, name, state, desc):
+            self.name = name
+            self.state = state
+            self.desc = desc
+        def get_name(self):
+            return self.name
+        def get_state(self):
+            return self.state
+        def get_desc(self):
+            return self.desc
+
+    class ArrayClue(object):
+        def __init__(self):
+            self.inventory = []
+        def add_clue(self, thisClue):
+            self.inventory.append(Clue(thisClue.name, thisClue.state, thisClue.desc))
+
 
 ##Aure's screens
 

@@ -24,7 +24,7 @@ init python:
 
     config.tag_layer['boy'] = 'screens' # all images with the tag 'bg' are put on layer 'bg'
     config.tag_layer['female'] = 'screens' # all images with the tag 'bg' are put on layer 'bg'
-    
+
     vpunch = Move((0, 10), (0, -10), .10, bounce=True, repeat=True, delay=1.275)#0.275 de base
     hpunch = Move((15, 0), (-15, 0), .10, bounce=True, repeat=True, delay=.275)
 
@@ -106,6 +106,7 @@ label intro:
     $talk_count = 0
     scene school front
     play music "audio/BGM/BGM1_(Tiny_Little_Adiantum_Instrumental).mp3" fadein 1.0 fadeout 1.0
+    show screen Menu(0,0)
     mc "There it is, Lord Gril’s University, it sure feels good to be back."
     mc "This second year here began really well and first semester sure was a blast, I sure hope the second can be just as good! School life, here I come!"
     mc "Now, I gotta find which room i’m in… lemme see… ah! The board’s over there."
@@ -119,9 +120,8 @@ label intro:
     #Tuto pour se déplacer dans l’université
 
     scene amphitheater
-
     mc "Everyone’s already here, the teacher isn’t though, perfect time to chat and catch up with the bois."
-
+    hide screen Menu
     show josh normal_idle
     josh ""
     hide josh normal_idle
@@ -149,64 +149,23 @@ label intro:
         $ val = _return
         $talk_count += 1
         $renpy.call(val)
+    show screen Menu(0,0)
     play sound "audio/Effects/Door_opening_old.ogg"
+    #TODO reduce size of epstein sprite
     show epstein normal_idle
     epstein "Ok everyone, to your seats, we’re gonna start the course. And don’t even hope we’re gonna talk about the holidays, you’ve got a lot to learn before the end of the year, so let’s get into it right now."
     hide epstein normal_idle
-    
-    ###added from here in label intro by marine## erase com. if it's well done 
-    scene school hallway with fade # need 
-    pause 1 
-
-    mc "And here I am, wandering about in the university’s hallways while the sun is bright out and other students are enjoying their day. Even I’m wondering why i’m here."
-    mc "Why is it that I end up spending my afternoon going to my math teacher’s office to ask him for help with his own course."
-    mc "While it is true that maths never really were my strong suit, this semester’s been the absolute worse so far."
-    mc "Mr Epstein really is what the rumors depicted him as, and more."
-    mc "So anyway I’m lost. My airhead brain can’t remember where Epstein’s bloody office is."
-    mc "Let’s think this through, right now i’m in B7, i’m quite sure his office was somewhere around here."
-    mc "Ok so now if I turn right, the math department should be here right?"
-    mc "Aaaaand it’s not, DAMMIT!"
-    
-    "AAAAAAAAAAAAHH" with vpunch
-    
-    
-    mc "What the hell was that!? A scream ?!"
-    mc "As I turn around, I see the sign above the opposite hallway: mathematics department."
-    mc "Well, here it is then! But what the heck was that noise? It came from there."
-    mc "As I reach the mid-section of the hallway, I see a notice board on the door to my left: Mr Epstein, Aggregate Teacher"
-    mc "Well finally! Here it is!"
-    mc "I’m pretty sure the scream came from here though… Maybe he fell and broke a shelf or something, he must be quite hurt in here from the sound of it. Should I maybe come back later?"
-    mc "Eh? Whatever, i’m already wasting my afternoon being here, better at least help him out, maybe i’ll get something out of it who knows."
-    mc "I slowly push the door open…"
-
-    ##door_sfx
-    m "ADD HERE DOOR SFX hehehehehehe Line 179"
-    ##dramatic_reveal_sfx
-    scene epstein_dead
-
-    mc "He’s not alone ! He is with a girl ? What are they doing together ? What !?"
-    mc "It’s ‘mc_meuf’ ! What are they doing on the ground so close to each other ? Did he hurt her ?! That bastard ! I repress my surging anger and ask"
-    mc "What’s happening here ?"
-    mc_meuf "I...I..tried to st...stop him. He was to fast."
-    mc "What are you talking about, what happened ?"
-    mc "As I look around I see that Epstein is still on the ground. He’s not moving. Is he …?"
-    mc_meuf "He tri..tried to kill himself and I..I wanted to stop but he was to fast !"
-    mc_meuf "I don’t know what to do now.."
-    mc "Oh my god, oh my god, I can’t believe it" 
-    mc "It feels surreal, I can’t believe it’s happening right now, I’m having a hard time breathing, my palms are sweaty, knees getting weak, arms are heavy"
-    mc "I’m gonna vomit on my sweater already"
-    mc_meuf "We can’t stay here, we have to get out.. Maybe we should call someone"
-    mc "I hear her mumbling something and helping me move in the hall before I lose consciousness."
-
-    ### end added by marine 
-    
-    
     return
 #zaeaz
 
 
+
 label intro_josh:
+    #test clue
+    $clue1 = Clue("test",0,"test")
+    $cluelist.add_clue(clue1)
     show josh normal_idle
+    show screen Menu(0,0)
     josh "It would seem this encounter has granted me new and unforeseen powers…"
     mc "Hi Josh, how are you doing?"
     josh "DON’T COME NEAR ME, CLUELESS MORTAL!"
@@ -233,11 +192,13 @@ label intro_josh:
             hide josh normal_idle
 
     mc "Now who to talk to?"
+    hide screen Menu
     #Add Josh info to notes
     return 0
 
 label intro_john:
     show john normal_idle
+    show screen Menu(0,0)
     john "Yo [MC], long time no see! How are you doing?"
     mc "Hey John, i’m fine, and you? The holidays were nice and all, but i’m still happy coming back and seeing you all."
     john "Yup, I’m happy too. How were your holidays? Did you have fun?"
@@ -253,11 +214,13 @@ label intro_john:
     mc "Okay, thanks. See you later."
     john "See ya."
     hide john normal_idle
+    hide screen Menu
     #Add John info to notes
     return 0
 
 label intro_juan:
     show juan normal_idle
+    show screen Menu(0,0)
     mc "Here’s Juan, he looks baked as usual, no harm talking to him though. Hey man, how’re you doing."
     juan "Yooooooo ma man, doin’ greaaaat and you?"
     mc "I’m doing fine myself thank you."
@@ -272,11 +235,13 @@ label intro_juan:
     juan "Alright my guy, keep doin’ whatever you do out there and watch out for yourself ok?"
     mc "yeah sure, see you. Yep, sure enough, first day of class and he’s already high as a kite, some things never change eh?"
     hide juan normal_idle
+    hide screen Menu
     #Add Juan info to notes
     return 0
 
 label intro_brice:
     show brice normal_idle
+    show screen Menu(0,0)
     brice "Oh Hi [MC]! I sure am glaaaaaad to see you here!"
     mc "And here is Brice, your local big-mouthed annoying dude who has yet to understand that this isn’t high school anymore and bullying people won’t get you a fan club."
     mc "Honestly, I hate how he just can’t get himself to just chill and enjoy uni life without being a bother. But hey, he was my practical works partner for the first semester and he did his part, so let’s at least try to be nice."
@@ -288,11 +253,13 @@ label intro_brice:
     brice "I’m already doing that. HA!"
     mc "I really can’t fucking stand him."
     hide brice normal_idle
+    hide screen Menu
     #Add Brice info to notes
     return 0
 
 label intro_sadiq:
     show sadiq normal_idle
+    show screen Menu(0,0)
     mc "Hi Sadiq, how was your winter?"
     sadiq "It was great man, and yours?"
     mc "Nice, nice, ready for the second round?"
@@ -312,23 +279,24 @@ label intro_sadiq:
     mc "yeah, what about him?"
     sadiq "I heard he’s quite severe and also, he does surprise tests every 2 weeks"
     mc "Oh, better remember that! Thanks for the heads up man!"
-
+    hide screen Menu
     # ? tuto notes ?
 
     centered "{size=+10}{outlinecolor=#ffffff}{color=#000000}As your classmate just said, it is important to take notes{/color}{/outlinecolor}{/size}"
     centered "{size=+10}{outlinecolor=#ffffff}{color=#000000}Use the '{b}Take Notes{/b}' button to write down the curent discution in your notebook{/color}{/outlinecolor}{/size}"
     centered "{size=+10}{outlinecolor=#ffffff}{color=#000000}You will be able to read it again whenever and wherever you want{/color}{/outlinecolor}{/size}"
     centered "{size=+10}{outlinecolor=#ffffff}{color=#000000}But be careful! You only have {color=#f00}10{/color} entries available{/color}{/outlinecolor}{/size}"
-
+    show screen Menu(1,0)
     sadiq "You’re welcome man, alright i’ll be going now, see you soon."
     mc "Yeah, see you man. Sadiq really is a chill guy, I truly hope i can get to know him more."
-
+    hide screen Menu
     hide sadiq normal_idle
     #Add Sadiq info to notes
     return 0
 
 label intro_charles:
     show charles normal_idle
+    show screen Menu(0,0)
     mc "Hey Charles, how you doing mate?"
     charles "Good Morning [MC]. I’m fine, thank you. And you, how are you ? How were your holidays ?"
     mc "Well, nothing special, I just-"
@@ -341,5 +309,54 @@ label intro_charles:
     mc "… Let’s ignore that last sentence, he’s like that with everyone…"
     mc "Now who to talk to?"
     hide charles normal_idle
+    hide screen Menu
     #Ajouter les infos de Charles dans le carnet, et display que ça a été fait.
     return 0
+
+label prologue:
+    ###added from here in label intro by marine## erase com. if it's well done
+    scene school hallway with fade # need
+    pause 1
+
+    mc "And here I am, wandering about in the university’s hallways while the sun is bright out and other students are enjoying their day. Even I’m wondering why i’m here."
+    mc "Why is it that I end up spending my afternoon going to my math teacher’s office to ask him for help with his own course."
+    mc "While it is true that maths never really were my strong suit, this semester’s been the absolute worse so far."
+    mc "Mr Epstein really is what the rumors depicted him as, and more."
+    mc "So anyway I’m lost. My airhead brain can’t remember where Epstein’s bloody office is."
+    mc "Let’s think this through, right now i’m in B7, i’m quite sure his office was somewhere around here."
+    mc "Ok so now if I turn right, the math department should be here right?"
+    mc "Aaaaand it’s not, DAMMIT!"
+
+    "AAAAAAAAAAAAHH" with vpunch
+
+
+    mc "What the hell was that!? A scream ?!"
+    mc "As I turn around, I see the sign above the opposite hallway: mathematics department."
+    mc "Well, here it is then! But what the heck was that noise? It came from there."
+    mc "As I reach the mid-section of the hallway, I see a notice board on the door to my left: Mr Epstein, Aggregate Teacher"
+    mc "Well finally! Here it is!"
+    mc "I’m pretty sure the scream came from here though… Maybe he fell and broke a shelf or something, he must be quite hurt in here from the sound of it. Should I maybe come back later?"
+    mc "Eh? Whatever, i’m already wasting my afternoon being here, better at least help him out, maybe i’ll get something out of it who knows."
+    mc "I slowly push the door open…"
+
+    ##door_sfx
+    m "ADD HERE DOOR SFX hehehehehehe Line 179"
+    ##dramatic_reveal_sfx
+    scene epstein_dead
+
+    mc "He’s not alone ! He is with a girl ? What are they doing together ? What !?"
+    mc "It’s ‘mc_meuf’ ! What are they doing on the ground so close to each other ? Did he hurt her ?! That bastard ! I repress my surging anger and ask"
+    mc "What’s happening here ?"
+    mc_meuf "I...I..tried to st...stop him. He was to fast."
+    mc "What are you talking about, what happened ?"
+    mc "As I look around I see that Epstein is still on the ground. He’s not moving. Is he …?"
+    mc_meuf "He tri..tried to kill himself and I..I wanted to stop but he was to fast !"
+    mc_meuf "I don’t know what to do now.."
+    mc "Oh my god, oh my god, I can’t believe it"
+    mc "It feels surreal, I can’t believe it’s happening right now, I’m having a hard time breathing, my palms are sweaty, knees getting weak, arms are heavy"
+    mc "I’m gonna vomit on my sweater already"
+    mc_meuf "We can’t stay here, we have to get out.. Maybe we should call someone"
+    mc "I hear her mumbling something and helping me move in the hall before I lose consciousness."
+
+    ### end added by marine
+    return
