@@ -4,7 +4,8 @@ define m = Character("Marine")
 define h = Character("Jeune Homme")
 define f = Character("Jeune Femme")
 
-define mc = Character("MC")
+define mc = Character("You")
+define li = DynamicCharacter("li_name")
 define epstein = Character("Epstein")
 define josh = Character("Josh")
 define john = Character("John")
@@ -13,6 +14,13 @@ define brice = Character("Brice")
 define sadiq = Character("Sadiq")
 define charles = Character("Charles")
 define mc_meuf = Character("Love interest")
+
+##EFFECTS
+
+define fade = Fade(0.5, 0.0, 0.5)
+define fadehold = Fade(0.5, 1.0, 0.5)
+define flash = Fade(0.1, 0.0, 0.5, color="#fff")
+
 ##--------------------------------------
 
 ##VARIABLE
@@ -23,7 +31,17 @@ define storyDevelopment = "intro"
 ##CHARACTER AND BACKGROUND LAYOUT
 init python:
 
-    config.tag_layer['boy'] = 'screens' # all images with the tag 'bg' are put on layer 'bg'
+    ##CHARACTER OBJECT DEFINITION
+    C_Epstein = CharacterObj('Epstein','characters/Epstein','TRIVIA','TRIVIA','TRIVIA',0)
+    C_Josh = CharacterObj('Josh','josh','TRIVIA','TRIVIA','TRIVIA',1)
+    C_John = CharacterObj('John','john','TRIVIA','TRIVIA','TRIVIA',2)
+    C_Juan = CharacterObj('Juan','juan','TRIVIA','TRIVIA','TRIVIA',3)
+    C_Brice = CharacterObj('Brice','brice','TRIVIA','TRIVIA','TRIVIA',4)
+    C_Sadiq = CharacterObj('Sadiq','sadiq','TRIVIA','TRIVIA','TRIVIA',5)
+    C_Charles = CharacterObj('Charles','charles','TRIVIA','TRIVIA','TRIVIA',6)
+
+    config.tag_layer['charac josh normal_idle'] = 'screens'
+
     config.tag_layer['charac'] = 'screens' # all images with the tag 'bg' are put on layer 'bg'
 
     vpunch = Move((0, 10), (0, -10), .10, bounce=True, repeat=True, delay=1.275)#0.275 de base
@@ -33,7 +51,7 @@ init python:
 
 
 label start:
-        jump intro
+        jump preintro
         #jump Dormitory
 
 
@@ -101,11 +119,60 @@ label femme_clicked:
         jump Library
 
 
+label preintro:
+
+    $li_name = "???"
+
+    transform slightright:
+        xalign 0.75
+        yalign 1.0
+
+    li "Hey... Hello anyone here..."
+
+    mc "Hum?!"
+
+    scene classroom
+    with fade
+    show eileen happy at slightright
+    with fade
+
+    li "Finally! You're awake! Sleeping in the first lesson of college I see... Haha"
+
+    mc "Huh... Yeah my bad..."
+
+    $li_name = "Alex"
+    li "I'm Alex, nice to meet you! What's your name?"
+
+label nameDefine:
+
+    python:
+        name = renpy.input("What's your name?")
+        name = name.strip() or "John"
+
+    menu:
+        li "Really?"
+
+        "Yes":
+            jump introEnd
+
+        "No, try another one":
+            jump nameDefine
+
+label introEnd :
+    li "So... It is [name], I see... Well see you later then! I hope we can become great friends!"
+
+    mc "Oh yeah, I hope so too..."
+
+    show pblack_screen
+    with dissolve
+
+    "1 Year later..."
+
 label intro:
     $config.label_callback
     $name_of_label = current_label
     $talk_count = 0
-    scene school front
+    scene school front with fade
     play music "audio/BGM/BGM1_(Tiny_Little_Adiantum_Instrumental).mp3" fadein 1.0 fadeout 1.0
     show screen Menu(0,0)
     mc "There it is, Lord Gril’s University, it sure feels good to be back."
@@ -113,26 +180,28 @@ label intro:
     mc "Now, I gotta find which room i’m in… lemme see… ah! The board’s over there."
 
     #need info board bg
-    scene placeholder
+    scene placeholder with fade
 
     mc "Engineering majors… hmmmm"
     mc "Ah! Room A5, let’s go then."
+
     hide screen Menu
     show screen Menu(0,1)
     centered "{size=+10}{color=#000000}{outlinecolor=#ffffff}The tutorial on how to use the map starts now{/outlinecolor}{/color}{/size}"
     centered "{size=+10}{color=#000000}{outlinecolor=#ffffff}Please click on the shoe icon to display the map and click on a location !{/outlinecolor}{/color}{/size}"
-    
+
     while 1:
         $renpy.pause(hard=True)
 
 
-label intro_LectureHall: 
+label intro_LectureHall:
     $location = "LectureHall"
     hide placeholder
 
+    scene amphitheater
     mc "Everyone’s already here, the teacher isn’t though, perfect time to chat and catch up with the bois."
     hide screen Menu
-    show charac josh normal_idle 
+    show charac josh normal_idle
     josh ""
     hide charac josh normal_idle
     show charac john normal_idle
@@ -150,7 +219,7 @@ label intro_LectureHall:
     show charac charles normal_idle
     charles ""
     hide charac charles normal_idle
-    
+
     centered "{size=+10}{color=#000000}{outlinecolor=#ffffff}The tutorial for character interaction will now start{/outlinecolor}{/color}{/size}"
     centered "{size=+10}{color=#000000}{outlinecolor=#ffffff}Please click on the character you want to interact with{/outlinecolor}{/color}{/size}"
 
@@ -165,14 +234,14 @@ label intro_LectureHall:
     show charac epstein normal_idle
     epstein "Ok everyone, to your seats, we’re gonna start the course. And don’t even hope we’re gonna talk about the holidays, you’ve got a lot to learn before the end of the year, so let’s get into it right now."
     hide charac epstein normal_idle
-    
+
     hide screen LectureHall
     with fade
     pause 1
-    jump prologue 
+    jump prologue
     while 1:
         $renpy.pause(hard=True)
-
+#zaeaz
 
 label intro_Cafeteria:
     show screen Menu(0,1)
@@ -180,7 +249,7 @@ label intro_Cafeteria:
     m "mmmh... I need to go to the lecture hall..."
     while 1:
         $renpy.pause(hard=True)
-    
+
 label intro_Dormitory:
     show screen Menu(0,1)
     $location = "Dormitory"
@@ -221,7 +290,11 @@ label intro_josh:
 
     mc "Now who to talk to?"
     hide screen Menu
-    #Add Josh info to notes
+
+    $characterlist.add_character(C_Josh)
+
+    centered "{size=+10}{color=#000000}{outlinecolor=#ffffff}New entry added for Josh{/outlinecolor}{/color}{/size}"
+
     return 0
 
 label intro_john:
@@ -243,7 +316,10 @@ label intro_john:
     john "See ya."
     hide charac john normal_idle
     hide screen Menu
-    #Add John info to notes
+
+    $characterlist.add_character(C_John)
+    centered "{size=+10}{color=#000000}{outlinecolor=#ffffff}New entry added for John{/outlinecolor}{/color}{/size}"
+
     return 0
 
 label intro_juan:
@@ -264,7 +340,10 @@ label intro_juan:
     mc "yeah sure, see you. Yep, sure enough, first day of class and he’s already high as a kite, some things never change eh?"
     hide charac juan normal_idle
     hide screen Menu
-    #Add Juan info to notes
+
+    $characterlist.add_character(C_Juan)
+    centered "{size=+10}{color=#000000}{outlinecolor=#ffffff}New entry added for Juan{/outlinecolor}{/color}{/size}"
+
     return 0
 
 label intro_brice:
@@ -282,7 +361,10 @@ label intro_brice:
     mc "I really can’t fucking stand him."
     hide charac brice normal_idle
     hide screen Menu
-    #Add Brice info to notes
+
+    $characterlist.add_character(C_Brice)
+    centered "{size=+10}{color=#000000}{outlinecolor=#ffffff}New entry added for Brice{/outlinecolor}{/color}{/size}"
+
     return 0
 
 label intro_sadiq:
@@ -308,7 +390,6 @@ label intro_sadiq:
     sadiq "I heard he’s quite severe and also, he does surprise tests every 2 weeks"
     mc "Oh, better remember that! Thanks for the heads up man!"
     hide screen Menu
-    # ? tuto notes ?
 
     centered "{size=+10}{outlinecolor=#ffffff}{color=#000000}As your classmate just said, it is important to take notes{/color}{/outlinecolor}{/size}"
     centered "{size=+10}{outlinecolor=#ffffff}{color=#000000}Use the '{b}Take Notes{/b}' button to write down the curent discution in your notebook{/color}{/outlinecolor}{/size}"
@@ -319,7 +400,10 @@ label intro_sadiq:
     mc "Yeah, see you man. Sadiq really is a chill guy, I truly hope i can get to know him more."
     hide screen Menu
     hide charac sadiq normal_idle
-    #Add Sadiq info to notes
+
+    $characterlist.add_character(C_Sadiq)
+    centered "{size=+10}{color=#000000}{outlinecolor=#ffffff}New entry added for Sadiq{/outlinecolor}{/color}{/size}"
+
     return 0
 
 label intro_charles:
@@ -338,11 +422,14 @@ label intro_charles:
     mc "Now who to talk to?"
     hide charac charles normal_idle
     hide screen Menu
-    #Ajouter les infos de Charles dans le carnet, et display que ça a été fait.
+
+    $characterlist.add_character(C_Charles)
+    centered "{size=+10}{color=#000000}{outlinecolor=#ffffff}New entry added for Charles{/outlinecolor}{/color}{/size}"
+
     return 0
 
 label prologue:
-    $storyDevelopment = "prologue" 
+    $storyDevelopment = "prologue"
     scene school hallway with fade # need
     pause 1
 
@@ -385,8 +472,8 @@ label prologue:
     mc "I’m gonna vomit on my sweater already"
     mc_meuf "We can’t stay here, we have to get out.. Maybe we should call someone"
     mc "I hear her mumbling something and helping me move in the hall before I lose consciousness."
-   
-    return 
+
+    return
     while 1:
         $renpy.pause(hard=True)
 
