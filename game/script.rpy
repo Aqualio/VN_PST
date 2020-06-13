@@ -24,7 +24,7 @@ define storyDevelopment = "intro"
 init python:
 
     config.tag_layer['boy'] = 'screens' # all images with the tag 'bg' are put on layer 'bg'
-    config.tag_layer['female'] = 'screens' # all images with the tag 'bg' are put on layer 'bg'
+    config.tag_layer['charac'] = 'screens' # all images with the tag 'bg' are put on layer 'bg'
 
     vpunch = Move((0, 10), (0, -10), .10, bounce=True, repeat=True, delay=1.275)#0.275 de base
     hpunch = Move((15, 0), (-15, 0), .10, bounce=True, repeat=True, delay=.275)
@@ -122,7 +122,8 @@ label intro:
     centered "{size=+10}{color=#000000}{outlinecolor=#ffffff}The tutorial on how to use the map starts now{/outlinecolor}{/color}{/size}"
     centered "{size=+10}{color=#000000}{outlinecolor=#ffffff}Please click on the shoe icon to display the map and click on a location !{/outlinecolor}{/color}{/size}"
     
-    $renpy.pause(hard=True)
+    while 1:
+        $renpy.pause(hard=True)
 
 
 label intro_LectureHall: 
@@ -131,25 +132,25 @@ label intro_LectureHall:
 
     mc "Everyone’s already here, the teacher isn’t though, perfect time to chat and catch up with the bois."
     hide screen Menu
-    show josh normal_idle
+    show charac josh normal_idle 
     josh ""
-    hide josh normal_idle
-    show john normal_idle
+    hide charac josh normal_idle
+    show charac john normal_idle
     john ""
-    hide john normal_idle
-    show juan normal_idle
+    hide charac john normal_idle
+    show charac juan normal_idle
     juan ""
-    hide juan normal_idle
-    show brice normal_idle
+    hide charac juan normal_idle
+    show charac brice normal_idle
     brice ""
-    hide brice normal_idle
-    show sadiq normal_idle
+    hide charac brice normal_idle
+    show charac sadiq normal_idle
     sadiq ""
-    hide sadiq normal_idle
-    show charles normal_idle
+    hide charac sadiq normal_idle
+    show charac charles normal_idle
     charles ""
-    hide charles normal_idle
-
+    hide charac charles normal_idle
+    
     centered "{size=+10}{color=#000000}{outlinecolor=#ffffff}The tutorial for character interaction will now start{/outlinecolor}{/color}{/size}"
     centered "{size=+10}{color=#000000}{outlinecolor=#ffffff}Please click on the character you want to interact with{/outlinecolor}{/color}{/size}"
 
@@ -161,33 +162,37 @@ label intro_LectureHall:
     show screen Menu(0,0)
     play sound "audio/Effects/Door_opening_old.ogg"
 
-    show epstein normal_idle
+    show charac epstein normal_idle
     epstein "Ok everyone, to your seats, we’re gonna start the course. And don’t even hope we’re gonna talk about the holidays, you’ve got a lot to learn before the end of the year, so let’s get into it right now."
-    hide epstein normal_idle
+    hide charac epstein normal_idle
     
     hide screen LectureHall
     with fade
     pause 1
     jump prologue 
-    $renpy.pause(hard=True)
+    while 1:
+        $renpy.pause(hard=True)
+
 
 label intro_Cafeteria:
     show screen Menu(0,1)
     $location = "Cafeteria"
     m "mmmh... I need to go to the lecture hall..."
-    $renpy.pause(hard=True)
+    while 1:
+        $renpy.pause(hard=True)
     
 label intro_Dormitory:
     show screen Menu(0,1)
     $location = "Dormitory"
     m "mmmh... I need to go to the lecture hall..."
-    $renpy.pause(hard=True)
+    while 1:
+        $renpy.pause(hard=True)
 
 label intro_josh:
     #test clue
     $clue1 = Clue("test",0,"test")
     $cluelist.add_clue(clue1)
-    show josh normal_idle
+    show charac josh normal_idle
     show screen Menu(0,0)
     josh "It would seem this encounter has granted me new and unforeseen powers…"
     mc "Hi Josh, how are you doing?"
@@ -205,14 +210,14 @@ label intro_josh:
             josh "They allow me to look into the future you see."
             mc "And what do you foresee?"
             josh "A great catastrophe, something bad is coming [MC], I can assure you. You aren’t as bad as the other mortals here, so I’ll ask you to please be careful around here."
-            hide josh normal_idle
+            hide charac josh normal_idle
             mc "Well, this sure was entertaining, Josh is a cool guy, he’s just really… passionate."
 
         "I’m tired of his shenanigans":
             mc "Well, guess I better get away then, see you around Josh."
             josh "The cataclysm is coming and they can’t see it. このばああかあああ"
             mc "I know Josh isn’t a bad dude, but I really don’t understand why he acts this way."
-            hide josh normal_idle
+            hide charac josh normal_idle
 
     mc "Now who to talk to?"
     hide screen Menu
@@ -220,7 +225,7 @@ label intro_josh:
     return 0
 
 label intro_john:
-    show john normal_idle
+    show charac john normal_idle
     show screen Menu(0,0)
     john "Yo [MC], long time no see! How are you doing?"
     mc "Hey John, i’m fine, and you? The holidays were nice and all, but i’m still happy coming back and seeing you all."
@@ -236,13 +241,13 @@ label intro_john:
     john "Got it, thanks. Same goes for you."
     mc "Okay, thanks. See you later."
     john "See ya."
-    hide john normal_idle
+    hide charac john normal_idle
     hide screen Menu
     #Add John info to notes
     return 0
 
 label intro_juan:
-    show juan normal_idle
+    show charac juan normal_idle
     show screen Menu(0,0)
     mc "Here’s Juan, he looks baked as usual, no harm talking to him though. Hey man, how’re you doing."
     juan "Yooooooo ma man, doin’ greaaaat and you?"
@@ -257,13 +262,13 @@ label intro_juan:
     mc "Okay…. well i’ll be going then."
     juan "Alright my guy, keep doin’ whatever you do out there and watch out for yourself ok?"
     mc "yeah sure, see you. Yep, sure enough, first day of class and he’s already high as a kite, some things never change eh?"
-    hide juan normal_idle
+    hide charac juan normal_idle
     hide screen Menu
     #Add Juan info to notes
     return 0
 
 label intro_brice:
-    show brice normal_idle
+    show charac brice normal_idle
     show screen Menu(0,0)
     brice "Oh Hi [MC]! I sure am glaaaaaad to see you here!"
     mc "And here is Brice, your local big-mouthed annoying dude who has yet to understand that this isn’t high school anymore and bullying people won’t get you a fan club."
@@ -275,13 +280,13 @@ label intro_brice:
     mc "Yeah, sure, you know what, do whatever you want ok?"
     brice "I’m already doing that. HA!"
     mc "I really can’t fucking stand him."
-    hide brice normal_idle
+    hide charac brice normal_idle
     hide screen Menu
     #Add Brice info to notes
     return 0
 
 label intro_sadiq:
-    show sadiq normal_idle
+    show charac sadiq normal_idle
     show screen Menu(0,0)
     mc "Hi Sadiq, how was your winter?"
     sadiq "It was great man, and yours?"
@@ -313,12 +318,12 @@ label intro_sadiq:
     sadiq "You’re welcome man, alright i’ll be going now, see you soon."
     mc "Yeah, see you man. Sadiq really is a chill guy, I truly hope i can get to know him more."
     hide screen Menu
-    hide sadiq normal_idle
+    hide charac sadiq normal_idle
     #Add Sadiq info to notes
     return 0
 
 label intro_charles:
-    show charles normal_idle
+    show charac charles normal_idle
     show screen Menu(0,0)
     mc "Hey Charles, how you doing mate?"
     charles "Good Morning [MC]. I’m fine, thank you. And you, how are you ? How were your holidays ?"
@@ -331,7 +336,7 @@ label intro_charles:
     charles "Hmph, alright. Not that I wanted to tell you that anyway, peasant…"
     mc "… Let’s ignore that last sentence, he’s like that with everyone…"
     mc "Now who to talk to?"
-    hide charles normal_idle
+    hide charac charles normal_idle
     hide screen Menu
     #Ajouter les infos de Charles dans le carnet, et display que ça a été fait.
     return 0
@@ -382,22 +387,26 @@ label prologue:
     mc "I hear her mumbling something and helping me move in the hall before I lose consciousness."
    
     return 
-    $renpy.pause(hard=True)
+    while 1:
+        $renpy.pause(hard=True)
 
 label prologue_Dormitory:
     show screen Menu(0,1)
     $location = "Dormitory"
     m "mmmh...nothing to do in the dormitory yet..."
-    $renpy.pause(hard=True)
+    while 1:
+        $renpy.pause(hard=True)
 
 label prologue_LectureHall:
     show screen Menu(0,1)
     $location = "LectureHall"
     m "mmmh...nothing to do in the LectureHall yet..."
-    $renpy.pause(hard=True)
+    while 1:
+        $renpy.pause(hard=True)
 
 label prologue_Cafeteria:
     show screen Menu(0,1)
     $location = "Cafeteria"
     m "mmmh...nothing to do in the cafeteria yet..."
-    $renpy.pause(hard=True)
+    while 1:
+        $renpy.pause(hard=True)

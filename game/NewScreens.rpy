@@ -455,7 +455,7 @@ screen characters_interactions_screen(names,mode,labelname):
                 $y= 150
                 $x -= 50
                 imagebutton:
-                    idle _names + " normal_idle"
+                    idle "charac "+_names + " normal_idle"
                     action Return(labelname +"_"+_names)
                     focus_mask True
                     xpos x
@@ -465,7 +465,7 @@ screen characters_interactions_screen(names,mode,labelname):
                 $y= 160
             else:
                 imagebutton:
-                    idle _names + " normal_idle"
+                    idle "charac "+_names + " normal_idle"
                     action Return(labelname +"_"+_names)
                     focus_mask True
                     xpos x
