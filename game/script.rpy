@@ -342,7 +342,8 @@ label intro_charles:
     return 0
 
 label prologue:
-    $storyDevelopment = "prologue" 
+    $storyDevelopment = "prologue"
+    pause 1
     scene school hallway with fade # need
     pause 1
 
