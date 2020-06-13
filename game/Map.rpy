@@ -7,9 +7,9 @@ label Map :
     #m "Selected [_return]"
 
     if _return != location and _return != "None": ##Check that the value return by the map screen isn't null and the same location as the current one 
-        
+        with None 
+        scene onlayer master
         $renpy.hide_screen("".join([location])) #We hide the background of the current location 
-        with dissolve
         
         $location = _return ## We save our next current location 
         ##m "Moving to [location]"
@@ -24,7 +24,7 @@ label Map :
     else :      ## If the location = return_ 
         m "I'm already here..."
         return 0
-
+    
     hide screen Menu ## We had the screen menu
     $nextLabel = storyDevelopment + "_"+ _return
     $renpy.jump("".join([nextLabel]))## We jump to the return_ label 

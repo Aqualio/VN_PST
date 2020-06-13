@@ -1,46 +1,40 @@
-Sat Jun 13 12:17:16 2020
+Sat Jun 13 16:31:58 2020
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
  
 
-Bootstrap to the start of init.init took 0.20s
+Bootstrap to the start of init.init took 0.08s
 Early init took 0.01s
-Loader init took 0.17s
+Loader init took 0.07s
 Loading error handling took 0.04s
-Loading script took 0.45s
-Loading save slot metadata. took 0.04s
+Loading script took 0.23s
+Loading save slot metadata. took 0.03s
 Loading persistent took 0.00s
 Importing _renpysteam: ImportError('No module named _renpysteam',)
 0
-Running init code took 0.21s
-Loading analysis data took 0.12s
+Running init code took 0.14s
+Loading analysis data took 0.08s
 Analyze and compile ATL took 0.00s
 Index archives took 0.00s
 Backing up script files to 'C:\\Users\\ma-cl\\AppData\\Roaming/RenPy/backups\\VN_PST':
-Dump and make backups. took 0.11s
+Dump and make backups. took 0.12s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
-Initial gc. took 0.06s
+Initial gc. took 0.03s
 DPI scale factor: 1.500000
 Creating interface object took 0.10s
 Cleaning stores took 0.00s
 Init translation took 0.04s
 Build styles took 0.01s
 Load screen analysis took 0.00s
-Analyze screens took 0.03s
-Save screen analysis took 0.12s
-Prepare screens took 0.13s
+Analyze screens took 0.02s
+Save screen analysis took 0.08s
+Prepare screens took 0.08s
 Save pyanalysis. took 0.00s
-Save bytecode. took 0.10s
+Save bytecode. took 0.07s
 Running _start took 0.00s
 Performance test:
-Interface start took 0.05s
-Couldn't import angle renderer:
-Traceback (most recent call last):
-  File "C:\trier\renpy\renpy-7.3.5-sdk\renpy\display\core.py", line 1939, in make_draw
-    __import__(mod)
-ImportError: DLL load failed: Le module spécifié est introuvable.
-Unknown renderer: angle
+Interface start took 0.03s
 
 primary display bounds: (0, 0, 1920, 1080)
 swap interval: 1 frames
@@ -50,6 +44,7 @@ Vendor: 'Intel'
 Renderer: 'Intel(R) HD Graphics 620'
 Version: '4.6.0 - Build 26.20.100.7263'
 Display Info: None
+Fixed-function is blacklisted.
 Extensions:
     GL_3DFX_texture_compression_FXT1
     GL_AMD_depth_clamp_separate
@@ -298,32 +293,18 @@ Texture testing:
 - 2048px textures work.
 Root FBO is: 0
 FBO Maximum Texture Size: 2048
-Total time until interface ready: 3.42299985886s
+Total time until interface ready: 2.31200003624s
 - Target is 5 frames in 0.333333333333 seconds.
 - Frame drawn at 0.000000 seconds.
 - Frame drawn at 0.018949 seconds.
-- Frame drawn at 0.124949 seconds.
-- Frame drawn at 0.137949 seconds.
-- Frame drawn at 0.268949 seconds.
-- 0.268949 seconds to render 5 frames.
-intro
-intro
-intro
-0
-[]
-0
+- Frame drawn at 0.152949 seconds.
+- Frame drawn at 0.157949 seconds.
+- Frame drawn at 0.285949 seconds.
+- 0.285949 seconds to render 5 frames.
 intro
 intro
 intro
 intro
-intro
-intro
-intro
-intro
-intro
-0
-[]
-0
 intro
 0
 []
@@ -335,84 +316,16 @@ intro
 0
 intro
 intro
-0
-[]
-0
 intro
-0
-[]
-0
 intro
 intro
 0
 []
 0
 intro
-intro
 0
 []
 0
-[u'josh', u'john', u'juan', u'brice', u'sadiq', u'charles']
-josh
-john
-juan
-brice
-sadiq
-charles
-intro
-[u'josh', u'john', u'juan', u'brice', u'sadiq', u'charles']
-josh
-john
-juan
-brice
-sadiq
-charles
-intro
-[u'josh', u'john', u'juan', u'brice', u'sadiq', u'charles']
-josh
-john
-juan
-brice
-sadiq
-charles
-intro
-The window was minimized.
-The window was restored.
-
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Windowed mode.
-Screen sizes: virtual=(1280, 720) physical=(1739, 978) drawable=(1739, 978)
-Root FBO is: 0
-FBO Maximum Texture Size: 2048
-[u'josh', u'john', u'juan', u'brice', u'sadiq', u'charles']
-josh
-john
-juan
-brice
-sadiq
-charles
-intro
-[u'josh', u'john', u'juan', u'brice', u'sadiq', u'charles']
-josh
-john
-juan
-brice
-sadiq
-charles
-intro
-[u'josh', u'john', u'juan', u'brice', u'sadiq', u'charles']
-josh
-john
-juan
-brice
-sadiq
-charles
-intro
-0
-[]
-0
-intro
 intro
 0
 []
@@ -427,43 +340,6 @@ intro
 []
 0
 intro
-0
-[]
-0
-intro
-intro
-0
-[]
-0
-intro
-intro
-0
-[]
-0
-The window was minimized.
-The window was restored.
-
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Windowed mode.
-Screen sizes: virtual=(1280, 720) physical=(1739, 978) drawable=(1739, 978)
-Root FBO is: 0
-FBO Maximum Texture Size: 2048
-[u'josh', u'john', u'juan', u'brice', u'sadiq', u'charles']
-josh
-john
-juan
-brice
-sadiq
-charles
-intro
-[u'josh', u'john', u'juan', u'brice', u'sadiq', u'charles']
-josh
-john
-juan
-brice
-sadiq
-charles
 [u'josh', u'john', u'juan', u'brice', u'sadiq', u'charles']
 josh
 john
@@ -481,405 +357,3 @@ sadiq
 charles
 intro
 [u'josh', u'john', u'juan', u'brice', u'sadiq', u'charles']
-josh
-john
-juan
-brice
-sadiq
-charles
-intro
-[u'josh', u'john', u'juan', u'brice', u'sadiq', u'charles']
-josh
-john
-juan
-brice
-sadiq
-charles
-[u'josh', u'john', u'juan', u'brice', u'sadiq', u'charles']
-josh
-john
-juan
-brice
-sadiq
-charles
-intro
-[u'josh', u'john', u'juan', u'brice', u'sadiq', u'charles']
-josh
-john
-juan
-brice
-sadiq
-charles
-[u'josh', u'john', u'juan', u'brice', u'sadiq', u'charles']
-josh
-john
-juan
-brice
-sadiq
-charles
-intro
-intro
-intro
-intro
-0
-[]
-0
-intro
-intro
-intro
-[u'josh', u'john', u'juan', u'brice', u'sadiq', u'charles']
-josh
-john
-juan
-brice
-sadiq
-charles
-intro
-intro
-[u'josh', u'john', u'juan', u'brice', u'sadiq', u'charles']
-josh
-john
-juan
-brice
-sadiq
-charles
-intro
-[u'josh', u'john', u'juan', u'brice', u'sadiq', u'charles']
-josh
-john
-juan
-brice
-sadiq
-charles
-intro
-0
-[]
-0
-intro
-[u'josh', u'john', u'juan', u'brice', u'sadiq', u'charles']
-josh
-john
-juan
-brice
-sadiq
-charles
-intro
-intro
-[u'josh', u'john', u'juan', u'brice', u'sadiq', u'charles']
-josh
-john
-juan
-brice
-sadiq
-charles
-intro
-[u'josh', u'john', u'juan', u'brice', u'sadiq', u'charles']
-josh
-john
-juan
-brice
-sadiq
-charles
-intro
-intro
-[u'josh', u'john', u'juan', u'brice', u'sadiq', u'charles']
-josh
-john
-juan
-brice
-sadiq
-charles
-intro
-0
-[]
-0
-intro
-[u'josh', u'john', u'juan', u'brice', u'sadiq', u'charles']
-josh
-john
-juan
-brice
-sadiq
-charles
-intro
-[u'josh', u'john', u'juan', u'brice', u'sadiq', u'charles']
-josh
-john
-juan
-brice
-sadiq
-charles
-intro
-[u'josh', u'john', u'juan', u'brice', u'sadiq', u'charles']
-josh
-john
-juan
-brice
-sadiq
-charles
-[u'josh', u'john', u'juan', u'brice', u'sadiq', u'charles']
-josh
-john
-juan
-brice
-sadiq
-charles
-intro
-intro
-intro
-0
-[]
-0
-intro
-intro
-intro
-intro
-intro
-[u'josh', u'john', u'juan', u'brice', u'sadiq', u'charles']
-josh
-john
-juan
-brice
-sadiq
-charles
-intro
-0
-[]
-0
-intro
-[u'josh', u'john', u'juan', u'brice', u'sadiq', u'charles']
-josh
-john
-juan
-brice
-sadiq
-charles
-intro
-intro
-intro
-[u'josh', u'john', u'juan', u'brice', u'sadiq', u'charles']
-josh
-john
-juan
-brice
-sadiq
-charles
-intro
-intro
-[u'josh', u'john', u'juan', u'brice', u'sadiq', u'charles']
-josh
-john
-juan
-brice
-sadiq
-charles
-intro
-0
-[]
-0
-intro
-[u'josh', u'john', u'juan', u'brice', u'sadiq', u'charles']
-josh
-john
-juan
-brice
-sadiq
-charles
-intro
-intro
-[u'josh', u'john', u'juan', u'brice', u'sadiq', u'charles']
-josh
-john
-juan
-brice
-sadiq
-charles
-intro
-intro
-[u'josh', u'john', u'juan', u'brice', u'sadiq', u'charles']
-josh
-john
-juan
-brice
-sadiq
-charles
-intro
-0
-[]
-0
-[u'josh', u'john', u'juan', u'brice', u'sadiq', u'charles']
-josh
-john
-juan
-brice
-sadiq
-charles
-[u'josh', u'john', u'juan', u'brice', u'sadiq', u'charles']
-josh
-john
-juan
-brice
-sadiq
-charles
-intro
-intro
-intro
-0
-[]
-0
-intro
-intro
-intro
-intro
-[u'josh', u'john', u'juan', u'brice', u'sadiq', u'charles']
-josh
-john
-juan
-brice
-sadiq
-charles
-intro
-intro
-intro
-[u'josh', u'john', u'juan', u'brice', u'sadiq', u'charles']
-josh
-john
-juan
-brice
-sadiq
-charles
-intro
-0
-[]
-0
-intro
-[u'josh', u'john', u'juan', u'brice', u'sadiq', u'charles']
-josh
-john
-juan
-brice
-sadiq
-charles
-intro
-intro
-[u'josh', u'john', u'juan', u'brice', u'sadiq', u'charles']
-josh
-john
-juan
-brice
-sadiq
-charles
-intro
-intro
-[u'josh', u'john', u'juan', u'brice', u'sadiq', u'charles']
-josh
-john
-juan
-brice
-sadiq
-charles
-intro
-[u'josh', u'john', u'juan', u'brice', u'sadiq', u'charles']
-josh
-john
-juan
-brice
-sadiq
-charles
-intro
-0
-[]
-0
-intro
-[u'josh', u'john', u'juan', u'brice', u'sadiq', u'charles']
-josh
-john
-juan
-brice
-sadiq
-charles
-intro
-intro
-[u'josh', u'john', u'juan', u'brice', u'sadiq', u'charles']
-josh
-john
-juan
-brice
-sadiq
-charles
-intro
-0
-[]
-0
-intro
-intro
-intro
-intro
-intro
-intro
-0
-[]
-0
-intro
-intro
-intro
-0
-[]
-0
-intro
-intro
-intro
-intro
-0
-[]
-0
-intro
-0
-[]
-0
-intro
-intro
-intro
-0
-[]
-0
-intro
-intro
-intro
-intro
-intro
-intro
-intro
-intro
-intro
-intro
-intro
-intro
-0
-[]
-0
-intro
-intro
-intro
-intro
-0
-[]
-0
-intro
-intro
-intro
-intro
-0
-[]
-0
-intro
-0
-[]
-0
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.01s
-Load screen analysis took 0.34s
-Analyze screens took 0.00s
-Prepare screens took 0.00s
-Running _start took 0.00s
