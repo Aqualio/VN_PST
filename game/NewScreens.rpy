@@ -28,17 +28,6 @@ init python:
 screen Map():
     zorder 10 ## We add an order to the screen to indicate which one should be display in front or else
     add 'BoutonDeplacement' at displacement_btn_position
-    ##add 'CampusMap' xpos 20 ypos 250
-
-    ##imagemap :
-      #  alpha True
-       # idle 'CampusMap' xpos 20 ypos 250 ##Image displayed and its location
-
-        #hotspot(12,10,190,54) action Return("Dormitory")
-        #hotspot(253, 10, 120, 58) action Return("Library")
-
-        ##Modifier les coordonnées avec le bouton X pour fermer la carte
-        #hotspot(12,100 , 190, 200) action Return("None")
 
     imagemap:
         idle 'CampusMap' xpos 20 ypos 250
@@ -76,15 +65,6 @@ screen Dormitory():
         style "gm_root"
         add 'Dormitory' xalign 0.0 yalign 0.0
 
-
-
-##A ENLEVER
-screen Library():
-    ##layer "background"
-    zorder 0
-    window:
-        style "gm_root"
-        add 'Library' xalign 0.0 yalign 0.0
 
 screen Cafeteria():
     zorder 0

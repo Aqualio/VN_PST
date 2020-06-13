@@ -17,7 +17,8 @@ define mc_meuf = Character("Love interest")
 
 ##VARIABLE
 define sequence_number = 0
-define location = "Dormitory"
+define location = ""
+define storyDevelopment = "intro"
 ##---------------------------------------
 ##CHARACTER AND BACKGROUND LAYOUT
 init python:
@@ -116,10 +117,18 @@ label intro:
 
     mc "Engineering majors… hmmmm"
     mc "Ah! Room A5, let’s go then."
+    hide screen Menu
+    show screen Menu(0,1)
+    centered "{size=+10}{color=#000000}{outlinecolor=#ffffff}The tutorial on how to use the map starts now{/outlinecolor}{/color}{/size}"
+    centered "{size=+10}{color=#000000}{outlinecolor=#ffffff}Please click on the shoe icon to display the map and click on a location !{/outlinecolor}{/color}{/size}"
+    
+    $renpy.pause(hard=True)
 
-    #Tuto pour se déplacer dans l’université
 
-    scene amphitheater
+label intro_LectureHall: 
+    $location = "LectureHall"
+    hide placeholder
+
     mc "Everyone’s already here, the teacher isn’t though, perfect time to chat and catch up with the bois."
     hide screen Menu
     show josh normal_idle
@@ -151,14 +160,28 @@ label intro:
         $renpy.call(val)
     show screen Menu(0,0)
     play sound "audio/Effects/Door_opening_old.ogg"
-    #TODO reduce size of epstein sprite
+
     show epstein normal_idle
     epstein "Ok everyone, to your seats, we’re gonna start the course. And don’t even hope we’re gonna talk about the holidays, you’ve got a lot to learn before the end of the year, so let’s get into it right now."
     hide epstein normal_idle
-    return
-#zaeaz
+    
+    hide screen LectureHall
+    with fade
+    pause 1
+    jump prologue 
+    $renpy.pause(hard=True)
 
-
+label intro_Cafeteria:
+    show screen Menu(0,1)
+    $location = "Cafeteria"
+    m "mmmh... I need to go to the lecture hall..."
+    $renpy.pause(hard=True)
+    
+label intro_Dormitory:
+    show screen Menu(0,1)
+    $location = "Dormitory"
+    m "mmmh... I need to go to the lecture hall..."
+    $renpy.pause(hard=True)
 
 label intro_josh:
     #test clue
@@ -314,7 +337,7 @@ label intro_charles:
     return 0
 
 label prologue:
-    ###added from here in label intro by marine## erase com. if it's well done
+    $storyDevelopment = "prologue" 
     scene school hallway with fade # need
     pause 1
 
@@ -340,7 +363,7 @@ label prologue:
     mc "I slowly push the door open…"
 
     ##door_sfx
-    m "ADD HERE DOOR SFX hehehehehehe Line 179"
+    m "ADD HERE DOOR SFX hehehehehehe Line 359"
     ##dramatic_reveal_sfx
     scene epstein_dead
 
@@ -357,6 +380,24 @@ label prologue:
     mc "I’m gonna vomit on my sweater already"
     mc_meuf "We can’t stay here, we have to get out.. Maybe we should call someone"
     mc "I hear her mumbling something and helping me move in the hall before I lose consciousness."
+   
+    return 
+    $renpy.pause(hard=True)
 
-    ### end added by marine
-    return
+label prologue_Dormitory:
+    show screen Menu(0,1)
+    $location = "Dormitory"
+    m "mmmh...nothing to do in the dormitory yet..."
+    $renpy.pause(hard=True)
+
+label prologue_LectureHall:
+    show screen Menu(0,1)
+    $location = "LectureHall"
+    m "mmmh...nothing to do in the LectureHall yet..."
+    $renpy.pause(hard=True)
+
+label prologue_Cafeteria:
+    show screen Menu(0,1)
+    $location = "Cafeteria"
+    m "mmmh...nothing to do in the cafeteria yet..."
+    $renpy.pause(hard=True)
