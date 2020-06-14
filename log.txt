@@ -1,45 +1,45 @@
-Sun Jun 14 02:15:26 2020
+Sun Jun 14 19:15:20 2020
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
  
 
-Bootstrap to the start of init.init took 0.74s
-Early init took 0.02s
-Loader init took 0.21s
-Loading error handling took 0.08s
-Loading script took 0.58s
-Loading save slot metadata. took 0.04s
+Bootstrap to the start of init.init took 0.08s
+Early init took 0.01s
+Loader init took 0.08s
+Loading error handling took 0.07s
+Loading script took 0.65s
+Loading save slot metadata. took 0.03s
 Loading persistent took 0.01s
 Importing _renpysteam: ImportError('No module named _renpysteam',)
 0
-Running init code took 0.17s
-Loading analysis data took 0.10s
+Running init code took 0.14s
+Loading analysis data took 0.07s
 Analyze and compile ATL took 0.00s
 Index archives took 0.00s
 Backing up script files to 'C:\\Users\\ma-cl\\AppData\\Roaming/RenPy/backups\\VN_PST':
-Dump and make backups. took 0.11s
+Dump and make backups. took 0.09s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
 Initial gc. took 0.03s
 DPI scale factor: 1.500000
-Creating interface object took 0.13s
+Creating interface object took 0.08s
 Cleaning stores took 0.00s
-Init translation took 0.15s
-Build styles took 0.03s
+Init translation took 0.03s
+Build styles took 0.00s
 Load screen analysis took 0.00s
-Analyze screens took 0.08s
-Save screen analysis took 0.22s
-Prepare screens took 0.19s
-Save pyanalysis. took 1.00s
-Save bytecode. took 0.15s
+Analyze screens took 0.02s
+Save screen analysis took 0.08s
+Prepare screens took 0.10s
+Save pyanalysis. took 0.46s
+Save bytecode. took 0.09s
 Running _start took 0.00s
 Performance test:
-Interface start took 0.09s
+Interface start took 0.05s
 
 primary display bounds: (0, 0, 1920, 1080)
 swap interval: 1 frames
 Windowed mode.
-Screen sizes: virtual=(1280, 720) physical=(1739, 978) drawable=(1739, 978)
+Screen sizes: virtual=(1280, 720) physical=(1731, 974) drawable=(1731, 974)
 Vendor: 'Intel'
 Renderer: 'Intel(R) HD Graphics 620'
 Version: '4.6.0 - Build 26.20.100.7263'
@@ -293,19 +293,93 @@ Texture testing:
 - 2048px textures work.
 Root FBO is: 0
 FBO Maximum Texture Size: 2048
-Total time until interface ready: 6.51900005341s
+Total time until interface ready: 3.83000016212s
 - Target is 5 frames in 0.333333333333 seconds.
 - Frame drawn at 0.000000 seconds.
-- Frame drawn at 0.029949 seconds.
-- Frame drawn at 0.157949 seconds.
-- Frame drawn at 0.171949 seconds.
-- Frame drawn at 0.293949 seconds.
-- 0.293949 seconds to render 5 frames.
+- Frame drawn at 0.016949 seconds.
+- Frame drawn at 0.181949 seconds.
+- Frame drawn at 0.188949 seconds.
+- Frame drawn at 0.385949 seconds.
+- 0.385949 seconds to render 5 frames.
+- Frame drawn at 0.407949 seconds.
+- 0.391000 seconds to render 5 frames.
+- Frame drawn at 0.422949 seconds.
+- 0.241000 seconds to render 5 frames.
+intro
+intro
+intro
+0
+[]
+0
+intro
+intro
+0
+[]
+0
 intro
 intro
 intro
 intro
 intro
+intro
+intro
+0
+[]
+0
+intro
+intro
+0
+[]
+0
+intro
+intro
+0
+[]
+0
+intro
+intro
+intro
+0
+[]
+0
+intro
+intro
+intro
+[u'josh', u'john', u'juan', u'brice', u'sadiq', u'charles']
+josh
+john
+juan
+brice
+sadiq
+charles
+intro
+[u'josh', u'john', u'juan', u'brice', u'sadiq', u'charles']
+josh
+john
+juan
+brice
+sadiq
+charles
+intro
+intro
+intro
+intro
+0
+[]
+0
+intro
+intro
+intro
+intro
+0
+[]
+0
+intro
+intro
+intro
+0
+[]
+0
 intro
 intro
 0
@@ -322,283 +396,17 @@ intro
 intro
 intro
 intro
-intro
 0
 []
 0
 intro
-0
-[]
-0
 intro
 intro
 0
 []
 0
 intro
-[u'josh', u'john', u'juan', u'brice', u'sadiq', u'charles']
-josh
-john
-juan
-brice
-sadiq
-charles
 intro
-[u'josh', u'john', u'juan', u'brice', u'sadiq', u'charles']
-josh
-john
-juan
-brice
-sadiq
-charles
-intro
-[u'josh', u'john', u'juan', u'brice', u'sadiq', u'charles']
-josh
-john
-juan
-brice
-sadiq
-charles
-intro
-[u'josh', u'john', u'juan', u'brice', u'sadiq', u'charles']
-josh
-john
-juan
-brice
-sadiq
-charles
-[u'josh', u'john', u'juan', u'brice', u'sadiq', u'charles']
-josh
-john
-juan
-brice
-sadiq
-charles
-intro
-[u'josh', u'john', u'juan', u'brice', u'sadiq', u'charles']
-josh
-john
-juan
-brice
-sadiq
-charles
-intro
-[u'josh', u'john', u'juan', u'brice', u'sadiq', u'charles']
-josh
-john
-juan
-brice
-sadiq
-charles
-intro
-[u'josh', u'john', u'juan', u'brice', u'sadiq', u'charles']
-josh
-john
-juan
-brice
-sadiq
-charles
-[u'josh', u'john', u'juan', u'brice', u'sadiq', u'charles']
-josh
-john
-juan
-brice
-sadiq
-charles
-intro
-intro
-intro
-intro
-[u'josh', u'john', u'juan', u'brice', u'sadiq', u'charles']
-josh
-john
-juan
-brice
-sadiq
-charles
-intro
-0
-[]
-0
-intro
-[u'josh', u'john', u'juan', u'brice', u'sadiq', u'charles']
-josh
-john
-juan
-brice
-sadiq
-charles
-intro
-intro
-[u'josh', u'john', u'juan', u'brice', u'sadiq', u'charles']
-josh
-john
-juan
-brice
-sadiq
-charles
-intro
-0
-[]
-0
-intro
-[u'josh', u'john', u'juan', u'brice', u'sadiq', u'charles']
-josh
-john
-juan
-brice
-sadiq
-charles
-intro
-intro
-[u'josh', u'john', u'juan', u'brice', u'sadiq', u'charles']
-josh
-john
-juan
-brice
-sadiq
-charles
-intro
-0
-[]
-0
-intro
-[u'josh', u'john', u'juan', u'brice', u'sadiq', u'charles']
-josh
-john
-juan
-brice
-sadiq
-charles
-intro
-0
-[]
-0
-intro
-[u'josh', u'john', u'juan', u'brice', u'sadiq', u'charles']
-josh
-john
-juan
-brice
-sadiq
-charles
-intro
-intro
-[u'josh', u'john', u'juan', u'brice', u'sadiq', u'charles']
-josh
-john
-juan
-brice
-sadiq
-charles
-intro
-intro
-[u'josh', u'john', u'juan', u'brice', u'sadiq', u'charles']
-josh
-john
-juan
-brice
-sadiq
-charles
-intro
-0
-[]
-0
-[u'josh', u'john', u'juan', u'brice', u'sadiq', u'charles']
-josh
-john
-juan
-brice
-sadiq
-charles
-[u'josh', u'john', u'juan', u'brice', u'sadiq', u'charles']
-josh
-john
-juan
-brice
-sadiq
-charles
-intro
-intro
-intro
-intro
-intro
-intro
-intro
-[u'josh', u'john', u'juan', u'brice', u'sadiq', u'charles']
-josh
-john
-juan
-brice
-sadiq
-charles
-intro
-intro
-[u'josh', u'john', u'juan', u'brice', u'sadiq', u'charles']
-josh
-john
-juan
-brice
-sadiq
-charles
-intro
-0
-[]
-0
-intro
-[u'josh', u'john', u'juan', u'brice', u'sadiq', u'charles']
-josh
-john
-juan
-brice
-sadiq
-charles
-intro
-0
-[]
-0
-intro
-[u'josh', u'john', u'juan', u'brice', u'sadiq', u'charles']
-josh
-john
-juan
-brice
-sadiq
-charles
-intro
-0
-[]
-0
-intro
-[u'josh', u'john', u'juan', u'brice', u'sadiq', u'charles']
-josh
-john
-juan
-brice
-sadiq
-charles
-intro
-0
-[]
-0
-intro
-intro
-[u'josh', u'john', u'juan', u'brice', u'sadiq', u'charles']
-josh
-john
-juan
-brice
-sadiq
-charles
-intro
-intro
-[u'josh', u'john', u'juan', u'brice', u'sadiq', u'charles']
-josh
-john
-juan
-brice
-sadiq
-charles
 intro
 0
 []
@@ -619,6 +427,62 @@ juan
 brice
 sadiq
 charles
+intro
+[u'josh', u'john', u'juan', u'brice', u'sadiq', u'charles']
+josh
+john
+juan
+brice
+sadiq
+charles
+intro
+[u'josh', u'john', u'juan', u'brice', u'sadiq', u'charles']
+josh
+john
+juan
+brice
+sadiq
+charles
+intro
+[u'josh', u'john', u'juan', u'brice', u'sadiq', u'charles']
+josh
+john
+juan
+brice
+sadiq
+charles
+intro
+[u'josh', u'john', u'juan', u'brice', u'sadiq', u'charles']
+josh
+john
+juan
+brice
+sadiq
+charles
+intro
+[u'josh', u'john', u'juan', u'brice', u'sadiq', u'charles']
+josh
+john
+juan
+brice
+sadiq
+charles
+intro
+[u'josh', u'john', u'juan', u'brice', u'sadiq', u'charles']
+josh
+john
+juan
+brice
+sadiq
+charles
+[u'josh', u'john', u'juan', u'brice', u'sadiq', u'charles']
+josh
+john
+juan
+brice
+sadiq
+charles
+intro
 [u'josh', u'john', u'juan', u'brice', u'sadiq', u'charles']
 josh
 john
@@ -630,13 +494,10 @@ intro
 intro
 intro
 intro
-[u'josh', u'john', u'juan', u'brice', u'sadiq', u'charles']
-josh
-john
-juan
-brice
-sadiq
-charles
+intro
+intro
+intro
+intro
 intro
 intro
 [u'josh', u'john', u'juan', u'brice', u'sadiq', u'charles']
@@ -648,6 +509,21 @@ sadiq
 charles
 intro
 intro
+intro
+intro
+intro
+intro
+intro
+intro
+intro
+intro
+[u'josh', u'john', u'juan', u'brice', u'sadiq', u'charles']
+josh
+john
+juan
+brice
+sadiq
+charles
 [u'josh', u'john', u'juan', u'brice', u'sadiq', u'charles']
 josh
 john
@@ -656,6 +532,62 @@ brice
 sadiq
 charles
 intro
+[u'josh', u'john', u'juan', u'brice', u'sadiq', u'charles']
+josh
+john
+juan
+brice
+sadiq
+charles
+[u'josh', u'john', u'juan', u'brice', u'sadiq', u'charles']
+josh
+john
+juan
+brice
+sadiq
+charles
+intro
+intro
+intro
+0
+[]
+0
+intro
+intro
+[u'josh', u'john', u'juan', u'brice', u'sadiq', u'charles']
+josh
+john
+juan
+brice
+sadiq
+charles
+0
+[]
+0
+intro
+[u'josh', u'john', u'juan', u'brice', u'sadiq', u'charles']
+josh
+john
+juan
+brice
+sadiq
+charles
+intro
+0
+[]
+0
+intro
+[u'josh', u'john', u'juan', u'brice', u'sadiq', u'charles']
+josh
+john
+juan
+brice
+sadiq
+charles
+intro
+0
+[]
+0
 intro
 [u'josh', u'john', u'juan', u'brice', u'sadiq', u'charles']
 josh
@@ -713,7 +645,6 @@ intro
 0
 []
 0
-intro
 [u'josh', u'john', u'juan', u'brice', u'sadiq', u'charles']
 josh
 john
@@ -722,30 +653,11 @@ brice
 sadiq
 charles
 intro
-0
-[]
-0
-intro
-intro
 intro
 0
 []
 0
-The window was minimized.
-The window was restored.
-
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Windowed mode.
-Screen sizes: virtual=(1280, 720) physical=(1739, 978) drawable=(1739, 978)
-Root FBO is: 0
-FBO Maximum Texture Size: 2048
 intro
-intro
-intro
-0
-[]
-0
 intro
 0
 []
@@ -756,14 +668,6 @@ intro
 0
 []
 0
-intro
-0
-[]
-0
-intro
-intro
-intro
-intro
 intro
 intro
 0
@@ -783,13 +687,6 @@ intro
 0
 intro
 intro
-intro
-0
-[]
-0
-intro
-intro
-intro
 0
 []
 0
@@ -798,6 +695,9 @@ intro
 []
 0
 intro
+0
+[]
+0
 intro
 intro
 0
@@ -820,49 +720,6 @@ intro
 []
 0
 intro
-intro
-0
-[]
-0
-0
-[]
-0
-0
-[]
-0
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.01s
-Load screen analysis took 0.10s
-Analyze screens took 0.00s
-Prepare screens took 0.00s
-Running _start took 0.00s
-intro
-intro
-intro
-intro
-0
-[]
-0
-intro
-intro
-0
-[]
-0
-intro
-intro
-intro
-intro
-intro
-intro
-intro
-intro
-intro
-0
-[]
-0
-intro
-intro
 0
 []
 0
@@ -870,101 +727,4 @@ intro
 0
 []
 0
-intro
-intro
-intro
-
-Full traceback:
-  File "game/script.rpy", line 127, in script call
-    $renpy.pause(hard=True)
-  File "game/Map.rpy", line 17, in script
-    with fade
-  File "C:\trier\renpy\renpy-7.3.5-sdk\renpy\ast.py", line 1389, in execute
-    renpy.exports.with_statement(trans, paired)
-  File "C:\trier\renpy\renpy-7.3.5-sdk\renpy\exports.py", line 1601, in with_statement
-    return renpy.game.interface.do_with(trans, paired, clear=clear)
-  File "C:\trier\renpy\renpy-7.3.5-sdk\renpy\display\core.py", line 2251, in do_with
-    clear=clear)
-  File "C:\trier\renpy\renpy-7.3.5-sdk\renpy\display\core.py", line 2702, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, **kwargs)
-  File "C:\trier\renpy\renpy-7.3.5-sdk\renpy\display\core.py", line 3194, in interact_core
-    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
-  File "C:\trier\renpy\renpy-7.3.5-sdk\renpy\display\core.py", line 2094, in draw_screen
-    renpy.config.screen_height,
-  File "renpy/display/render.pyx", line 490, in renpy.display.render.render_screen (gen\renpy.display.render.c:6805)
-    rv = render(root, width, height, st, st)
-  File "renpy/display/render.pyx", line 259, in renpy.display.render.render (gen\renpy.display.render.c:3520)
-    rv = d.render(widtho, heighto, st, at)
-  File "C:\trier\renpy\renpy-7.3.5-sdk\renpy\display\layout.py", line 722, in render
-    surf = render(child, width, height, cst, cat)
-  File "renpy/display/render.pyx", line 166, in renpy.display.render.render (gen\renpy.display.render.c:4075)
-    cpdef render(d, object widtho, object heighto, double st, double at):
-  File "renpy/display/render.pyx", line 259, in renpy.display.render.render (gen\renpy.display.render.c:3520)
-    rv = d.render(widtho, heighto, st, at)
-  File "C:\trier\renpy\renpy-7.3.5-sdk\renpy\display\transition.py", line 180, in render
-    renpy.display.render.render(self.transitions[-1], width, height, 0, 0)
-  File "renpy/display/render.pyx", line 166, in renpy.display.render.render (gen\renpy.display.render.c:4075)
-    cpdef render(d, object widtho, object heighto, double st, double at):
-  File "renpy/display/render.pyx", line 259, in renpy.display.render.render (gen\renpy.display.render.c:3520)
-    rv = d.render(widtho, heighto, st, at)
-  File "C:\trier\renpy\renpy-7.3.5-sdk\renpy\display\transition.py", line 361, in render
-    top = render(self.new_widget, width, height, st, at)
-  File "renpy/display/render.pyx", line 166, in renpy.display.render.render (gen\renpy.display.render.c:4075)
-    cpdef render(d, object widtho, object heighto, double st, double at):
-  File "renpy/display/render.pyx", line 259, in renpy.display.render.render (gen\renpy.display.render.c:3520)
-    rv = d.render(widtho, heighto, st, at)
-  File "C:\trier\renpy\renpy-7.3.5-sdk\renpy\display\layout.py", line 722, in render
-    surf = render(child, width, height, cst, cat)
-  File "renpy/display/render.pyx", line 166, in renpy.display.render.render (gen\renpy.display.render.c:4075)
-    cpdef render(d, object widtho, object heighto, double st, double at):
-  File "renpy/display/render.pyx", line 259, in renpy.display.render.render (gen\renpy.display.render.c:3520)
-    rv = d.render(widtho, heighto, st, at)
-  File "C:\trier\renpy\renpy-7.3.5-sdk\renpy\display\layout.py", line 722, in render
-    surf = render(child, width, height, cst, cat)
-  File "renpy/display/render.pyx", line 166, in renpy.display.render.render (gen\renpy.display.render.c:4075)
-    cpdef render(d, object widtho, object heighto, double st, double at):
-  File "renpy/display/render.pyx", line 259, in renpy.display.render.render (gen\renpy.display.render.c:3520)
-    rv = d.render(widtho, heighto, st, at)
-  File "C:\trier\renpy\renpy-7.3.5-sdk\renpy\display\screen.py", line 675, in render
-    child = renpy.display.render.render(self.child, w, h, st, at)
-  File "renpy/display/render.pyx", line 166, in renpy.display.render.render (gen\renpy.display.render.c:4075)
-    cpdef render(d, object widtho, object heighto, double st, double at):
-  File "renpy/display/render.pyx", line 259, in renpy.display.render.render (gen\renpy.display.render.c:3520)
-    rv = d.render(widtho, heighto, st, at)
-  File "C:\trier\renpy\renpy-7.3.5-sdk\renpy\display\layout.py", line 722, in render
-    surf = render(child, width, height, cst, cat)
-  File "renpy/display/render.pyx", line 166, in renpy.display.render.render (gen\renpy.display.render.c:4075)
-    cpdef render(d, object widtho, object heighto, double st, double at):
-  File "renpy/display/render.pyx", line 259, in renpy.display.render.render (gen\renpy.display.render.c:3520)
-    rv = d.render(widtho, heighto, st, at)
-  File "C:\trier\renpy\renpy-7.3.5-sdk\renpy\display\layout.py", line 1127, in render
-    st, at)
-  File "renpy/display/render.pyx", line 166, in renpy.display.render.render (gen\renpy.display.render.c:4075)
-    cpdef render(d, object widtho, object heighto, double st, double at):
-  File "renpy/display/render.pyx", line 259, in renpy.display.render.render (gen\renpy.display.render.c:3520)
-    rv = d.render(widtho, heighto, st, at)
-  File "accelerator.pyx", line 110, in renpy.display.accelerator.transform_render
-  File "renpy/display/render.pyx", line 259, in renpy.display.render.render (gen\renpy.display.render.c:3520)
-    rv = d.render(widtho, heighto, st, at)
-  File "C:\trier\renpy\renpy-7.3.5-sdk\renpy\display\image.py", line 500, in render
-    return wrap_render(self.target, width, height, st, at)
-  File "C:\trier\renpy\renpy-7.3.5-sdk\renpy\display\image.py", line 306, in wrap_render
-    rend = render(child, w, h, st, at)
-  File "renpy/display/render.pyx", line 166, in renpy.display.render.render (gen\renpy.display.render.c:4075)
-    cpdef render(d, object widtho, object heighto, double st, double at):
-  File "renpy/display/render.pyx", line 259, in renpy.display.render.render (gen\renpy.display.render.c:3520)
-    rv = d.render(widtho, heighto, st, at)
-  File "C:\trier\renpy\renpy-7.3.5-sdk\renpy\display\im.py", line 583, in render
-    return cache.get(self, render=True)
-  File "C:\trier\renpy\renpy-7.3.5-sdk\renpy\display\im.py", line 266, in get
-    surf = image.load()
-  File "C:\trier\renpy\renpy-7.3.5-sdk\renpy\display\im.py", line 628, in load
-    surf = renpy.display.pgrender.load_image(renpy.loader.load(self.filename), self.filename)
-  File "C:\trier\renpy\renpy-7.3.5-sdk\renpy\loader.py", line 576, in load
-    raise IOError("Couldn't find file '%s'." % name)
-IOError: Couldn't find file 'school dormitory room morning.jpg'.
-
-While loading <'Image' u'school dormitory room morning.jpg'>:
-  File "game/script.rpy", line 127, in script call
-    $renpy.pause(hard=True)
-  File "game/Map.rpy", line 17, in scr
+in

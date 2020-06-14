@@ -185,11 +185,11 @@ label intro:
     mc "Engineering majors… hmmmm"
     mc "Ah! Room A5, let’s go then."
 
-    hide screen Menu
-    show screen Menu(0,1)
     centered "{size=+10}{color=#000000}{outlinecolor=#ffffff}The tutorial on how to use the map starts now{/outlinecolor}{/color}{/size}"
     centered "{size=+10}{color=#000000}{outlinecolor=#ffffff}Please click on the shoe icon to display the map and click on a location !{/outlinecolor}{/color}{/size}"
-
+    hide screen Menu
+    show screen Menu(0,1)
+    
     while 1:
         $renpy.pause(hard=True)
 
@@ -236,8 +236,8 @@ label intro_LectureHall:
     hide charac epstein normal_idle
 
     hide screen LectureHall
-    with fade
-    pause 1
+    with dissolve
+    
     jump prologue
     while 1:
         $renpy.pause(hard=True)
@@ -431,7 +431,7 @@ label intro_charles:
 label prologue:
     $storyDevelopment = "prologue"
     pause 1
-    scene school hallway with fade # need
+    scene school hallway morning with fade # need
     pause 1
 
     mc "And here I am, wandering about in the university’s hallways while the sun is bright out and other students are enjoying their day. Even I’m wondering why i’m here."
@@ -442,13 +442,19 @@ label prologue:
     mc "Let’s think this through, right now i’m in B7, i’m quite sure his office was somewhere around here."
     mc "Ok so now if I turn right, the math department should be here right?"
     mc "Aaaaand it’s not, DAMMIT!"
-
+    
+    stop music 
+    play sound "audio/Effects/girl_shouting.ogg" 
     "AAAAAAAAAAAAHH" with vpunch
+    
 
 
     mc "What the hell was that!? A scream ?!"
     mc "As I turn around, I see the sign above the opposite hallway: mathematics department."
     mc "Well, here it is then! But what the heck was that noise? It came from there."
+    
+    play music "audio/BGM/BGM1_(Tiny_Little_Adiantum_Instrumental).mp3" fadein 1.0 fadeout 1.0
+    
     mc "As I reach the mid-section of the hallway, I see a notice board on the door to my left: Mr Epstein, Aggregate Teacher"
     mc "Well finally! Here it is!"
     mc "I’m pretty sure the scream came from here though… Maybe he fell and broke a shelf or something, he must be quite hurt in here from the sound of it. Should I maybe come back later?"
@@ -459,6 +465,7 @@ label prologue:
     m "ADD HERE DOOR SFX hehehehehehe Line 359"
     ##dramatic_reveal_sfx
     scene epstein_dead
+    play music "audio/BGM/epstein_dead.ogg" fadein 1.0 fadeout 1.0
 
     mc "He’s not alone ! He is with a girl ? What are they doing together ? What !?"
     mc "It’s ‘mc_meuf’ ! What are they doing on the ground so close to each other ? Did he hurt her ?! That bastard ! I repress my surging anger and ask"
@@ -473,7 +480,8 @@ label prologue:
     mc "I’m gonna vomit on my sweater already"
     mc_meuf "We can’t stay here, we have to get out.. Maybe we should call someone"
     mc "I hear her mumbling something and helping me move in the hall before I lose consciousness."
-
+    
+    stop music 
     return
     while 1:
         $renpy.pause(hard=True)
