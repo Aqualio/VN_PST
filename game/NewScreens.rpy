@@ -131,16 +131,17 @@ init:
     $ cluelist = ArrayClue()
     $ characterlist = CharacterList()
 
-    screen item_descriptions(item_ref=""):
+    screen item_descriptions(item_name="",item_desc=""):
         zorder 10
         tag descriptions
         modal False
         #here can make a list of object composed of each clues with each their description and according to param of the screen use the fct to look through the list and find the correct item available to player and display its information
-        text "Place holder here ref=[item_ref]" size 16 xalign 0.8 yalign 0.2
+        text "[item_name] :" size 20 xalign 0.6 yalign 0.15
+        text "[item_desc]" size 16 xalign 0.61 yalign 0.2
 
     screen notebook_clues_screen:
-        $x = 0.15
-        $y = 0.2
+        $x = 0.18
+        $y = 0.18
         #look when after exceeding a certain value of x for which all new image displayed goes out of screen, we increment y
         zorder 10
         tag notebook_screen
@@ -154,33 +155,25 @@ init:
 
             text "CLUES" color "#000" xalign 0.18 yalign 0.08
 
-            #for clue in cluelist:
-            #    imagebutton:
-            #        idle clue.get_name + ".png"
-            #        focus_mask True
-            #        xalign x
-            #        yalign y
-            #        action [Show(clue.get_desc, item_ref=clue.get_name)]
-            #    $x += 0.10
-                #if(x > val):
-                #    $x = 0.15
-                #    $y += 0.1
+            if cluelist.inventory:
+                for clue in cluelist.inventory:
+                    textbutton getattr(clue,'name') xalign x yalign y action [Function(renpy.show_screen,"item_descriptions",getattr(clue,'name'), getattr(clue,'desc'))]
+                    $y += 0.05
+            #imagebutton:
+            #    idle "TBD_icon.png"
+            #    focus_mask True
+            #    xalign 0.20
+            #    yalign 0.15
+            #    action [Show("item_descriptions", "KC_1")]
 
-            imagebutton:
-                idle "TBD_icon.png"
-                focus_mask True
-                xalign 0.20
-                yalign 0.15
-                action [Show("item_descriptions", "KC_1")]
+            #imagebutton:
+            #    idle "TBD_icon.png"
+            #    focus_mask True
+            #    xalign 0.30
+            #    yalign 0.15
+            #    action [Show("item_descriptions", item_ref="KC_angueury")]
 
-            imagebutton:
-                idle "TBD_icon.png"
-                focus_mask True
-                xalign 0.30
-                yalign 0.15
-                action [Show("item_descriptions", item_ref="KC_angueury")]
-
-    screen character_description(charfriendlvl=0,chartrivia1="",chartrivia2="",chartrivia3=""):
+    screen character_description(charfriendlvl,chartrivia1="",chartrivia2="",chartrivia3=""):
         zorder 10
         tag descriptions
         modal False
@@ -405,7 +398,7 @@ init -1 python:
             self.trivia1 = _trivia1
             self.trivia2 = _trivia2
             self.trivia3 = _trivia3
-            self.friendlvl = 0
+            self.friendlvl = 1
             self.charnb = _nb
 
         def __call__(self):

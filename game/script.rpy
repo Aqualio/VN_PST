@@ -172,6 +172,11 @@ label intro:
     $config.label_callback
     $name_of_label = current_label
     $talk_count = 0
+
+    #EXAMPLE TO ADD AN OBJECT
+    #$clue1 = Clue("test",0,"test")
+    #$cluelist.add_clue(clue1)
+
     scene school front with fade
     play music "audio/BGM/BGM1_(Tiny_Little_Adiantum_Instrumental).mp3" fadein 1.0 fadeout 1.0
     show screen Menu(0,0)
@@ -258,9 +263,6 @@ label intro_Dormitory:
         $renpy.pause(hard=True)
 
 label intro_josh:
-    #test clue
-    $clue1 = Clue("test",0,"test")
-    $cluelist.add_clue(clue1)
     show charac josh normal_idle
     show screen Menu(0,0)
     josh "It would seem this encounter has granted me new and unforeseen powers…"
