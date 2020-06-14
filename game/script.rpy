@@ -45,6 +45,7 @@ init python:
     config.tag_layer['charac'] = 'screens' # all images with the tag 'bg' are put on layer 'bg'
 
     vpunch = Move((0, 10), (0, -10), .10, bounce=True, repeat=True, delay=1.275)#0.275 de base
+    opunch = Move((0, 5), (0, -5), .10, bounce=True, repeat=True, delay=.5)
     hpunch = Move((15, 0), (-15, 0), .10, bounce=True, repeat=True, delay=.275)
 
 ##----------------------------------------
@@ -438,8 +439,15 @@ label prologue:
     pause 1
     scene school hallway morning with fade # need
     pause 1
+    $stylo = Clue("Stylo",0,"a pen I found in the hallway")
+    $cluelist.add_clue(stylo)
 
     mc "And here I am, wandering about in the university’s hallways while the sun is bright out and other students are enjoying their day. Even I’m wondering why i’m here."
+    
+    with opunch
+    mc "Oh! what is this ?"
+    centered "{size=+10}{color=#000000}{outlinecolor=#ffffff}An item has been added to your inventory. Go check it out !{/outlinecolor}{/color}{/size}"
+    
     mc "Why is it that I end up spending my afternoon going to my math teacher’s office to ask him for help with his own course."
     mc "While it is true that maths never really were my strong suit, this semester’s been the absolute worse so far."
     mc "Mr Epstein really is what the rumors depicted him as, and more."
