@@ -169,8 +169,8 @@ label intro_LectureHall:
     
     hide screen LectureHall
     with dissolve
-
-    jump prologue 
+    
+    jump prologue
     while 1:
         $renpy.pause(hard=True)
 
@@ -373,6 +373,7 @@ label prologue:
     m "ADD HERE DOOR SFX hehehehehehe Line 359"
     ##dramatic_reveal_sfx
     scene epstein_dead
+    play music "audio/BGM/epstein_dead.ogg" fadein 1.0 fadeout 1.0
 
     mc "He’s not alone ! He is with a girl ? What are they doing together ? What !?"
     mc "It’s ‘mc_meuf’ ! What are they doing on the ground so close to each other ? Did he hurt her ?! That bastard ! I repress my surging anger and ask"
@@ -387,8 +388,9 @@ label prologue:
     mc "I’m gonna vomit on my sweater already"
     mc_meuf "We can’t stay here, we have to get out.. Maybe we should call someone"
     mc "I hear her mumbling something and helping me move in the hall before I lose consciousness."
-   
-    return 
+
+    stop music 
+    return
     while 1:
         $renpy.pause(hard=True)
 
