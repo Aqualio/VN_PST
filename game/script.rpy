@@ -13,7 +13,7 @@ define juan = Character("Juan")
 define brice = Character("Brice")
 define sadiq = Character("Sadiq")
 define charles = Character("Charles")
-define mc_meuf = Character("Love interest")
+define mc_meuf = Character("Alex")
 
 ##EFFECTS
 
@@ -133,7 +133,7 @@ label preintro:
 
     scene classroom
     with fade
-    show eileen happy at slightright
+    show charac alex normal_idle at slightright
     with fade
 
     li "Finally! You're awake! Sleeping in the first lesson of college I see... Haha"
@@ -162,6 +162,9 @@ label introEnd :
     li "So... It is [name], I see... Well see you later then! I hope we can become great friends!"
 
     mc "Oh yeah, I hope so too..."
+    
+    hide charac alex normal_idle 
+    with fade
 
     show pblack_screen
     with dissolve
@@ -462,16 +465,20 @@ label prologue:
     mc "I’m pretty sure the scream came from here though… Maybe he fell and broke a shelf or something, he must be quite hurt in here from the sound of it. Should I maybe come back later?"
     mc "Eh? Whatever, i’m already wasting my afternoon being here, better at least help him out, maybe i’ll get something out of it who knows."
     mc "I slowly push the door open…"
+    pause 1 
 
-    ##door_sfx
-    m "ADD HERE DOOR SFX hehehehehehe Line 359"
-    ##dramatic_reveal_sfx
-    scene epstein_dead
+    play sound "audio/Effects/Creeky-Interior-Door.mp3"
+
+    scene pblack_screen
+    with dissolve
     play music "audio/BGM/epstein_dead.ogg" fadein 1.0 fadeout 1.0
 
     mc "He’s not alone ! He is with a girl ? What are they doing together ? What !?"
-    mc "It’s ‘mc_meuf’ ! What are they doing on the ground so close to each other ? Did he hurt her ?! That bastard ! I repress my surging anger and ask"
+    mc "It’s Alex ! What are they doing on the ground so close to each other ? Did he hurt her ?! That bastard ! I repress my surging anger and ask"
     mc "What’s happening here ?"
+    
+    show charac alex sad_idle
+    
     mc_meuf "I...I..tried to st...stop him. He was to fast."
     mc "What are you talking about, what happened ?"
     mc "As I look around I see that Epstein is still on the ground. He’s not moving. Is he …?"
