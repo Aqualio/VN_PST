@@ -128,10 +128,11 @@ init:
     $ killscreen = 0
     $ notelist = NoteList()
     $ cluelist = ArrayClue()
+    $ characterlist = CharacterList()
 
     screen item_descriptions(item_ref=""):
         zorder 10
-        tag item_descriptions
+        tag descriptions
         modal False
         #here can make a list of object composed of each clues with each their description and according to param of the screen use the fct to look through the list and find the correct item available to player and display its information
         text "Place holder here ref=[item_ref]" size 16 xalign 0.8 yalign 0.2
@@ -169,7 +170,7 @@ init:
                 focus_mask True
                 xalign 0.20
                 yalign 0.15
-                action [Show("item_descriptions", item_ref="KC_1")]
+                action [Show("item_descriptions", "KC_1")]
 
             imagebutton:
                 idle "TBD_icon.png"
@@ -178,10 +179,38 @@ init:
                 yalign 0.15
                 action [Show("item_descriptions", item_ref="KC_angueury")]
 
+    screen character_description(charfriendlvl=0,chartrivia1="",chartrivia2="",chartrivia3=""):
+        zorder 10
+        tag descriptions
+        modal False
+        $x = 0.8
+        $y = 0.2
+        $print(charfriendlvl)
+        $print(charfriendlvl)
+        $print(chartrivia1)
+        $print(chartrivia2)
+        $print(chartrivia3)
+
+        if(charfriendlvl != 0):
+            for i in range(charfriendlvl):
+                if(i == 1):
+                    text chartrivia1 size 16 xalign x yalign y
+                    $y += 0.05
+                if(i == 2):
+                    text chartrivia2 size 16 xalign x yalign y
+                    $y += 0.05
+                if(i == 3):
+                    text chartrivia3 size 16 xalign x yalign y
+                    $y += 0.05
+        #text "Place holder here ref=[item_ref]" size 16 xalign 0.8 yalign 0.2
+
     screen notebook_character_screen:
         zorder 10
         tag notebook_screen
         modal False
+        $x = 0.20
+        $y = 0.15
+        $i = 0
 
         fixed:
             xalign 0.7
@@ -191,23 +220,50 @@ init:
 
             text "CHARACTERS" color "#000" xalign 0.18 yalign 0.08
 
-            imagebutton:
-                idle "characters/Epstein_icon.png"
-                focus_mask True
-                xalign 0.18
-                yalign 0.15
+            if characterlist.characters:
+                for character in characterlist.characters:
+                    $print("before")
+                    $dummy = getattr(character, 'filename')
+                    $print(dummy)
+                    $charactericonfile = ''
+                    $charactericonfile.join([dummy,'_icon.png'])
+                    $charactericonfiletest = getattr(character, 'filename') + "_icon.png"
+                    $print(charactericonfiletest)
+                    $print(charactericonfile)
+                    $thisfrdlvl = getattr(character, 'friendlvl')
+                    $thistrivia1 = getattr(character, 'trivia1')
+                    $thistrivia2 = getattr(character, 'trivia2')
+                    $thistrivia3 = getattr(character, 'trivia3')
+                    $print("after")
+                    imagebutton:
+                        idle charactericonfiletest
+                        focus_mask None
+                        xalign x
+                        yalign y
+                        action [Function(renpy.show_screen,"character_description", thisfrdlvl, thistrivia1, thistrivia2, thistrivia3)]
+                    $x += 0.10
+                    $i += 1
+                    if(i == 4):
+                        $i = 0
+                        $y += 0.10
+            #imagebutton:
+            #    idle "characters/Epstein_icon.png"
+            #    focus_mask True
+            #    xalign 0.18
+            #    yalign 0.15
 
-            imagebutton:
-                idle "josh_icon.png"
-                focus_mask True
-                xalign 0.30
-                yalign 0.15
+            #imagebutton:
+            #    idle "josh_icon.png"
+            #    focus_mask True
+            #    xalign 0.30
+            #    yalign 0.15
 
-            imagebutton:
-                idle "juan_icon.png"
-                focus_mask True
-                xalign 0.40
-                yalign 0.15
+            #imagebutton:
+            #    idle "juan_icon.png"
+            #    focus_mask True
+            #    xalign 0.40
+            #    yalign 0.15
+
     screen notebook_notes_screen:
         zorder 10
         $d = {'menu_verif' : 'True'}
@@ -340,6 +396,53 @@ init -1 python:
             self.notes.pop(num_memo)
         def get_notes(self,i):
             return self.notes[i]
+
+    class CharacterObj(object):
+        def __init__(self,_name,_filename,_trivia1,_trivia2,_trivia3,_nb):
+            self.name = _name
+            self.filename = _filename
+            self.trivia1 = _trivia1
+            self.trivia2 = _trivia2
+            self.trivia3 = _trivia3
+            self.friendlvl = 0
+            self.charnb = _nb
+
+        def __call__(self):
+            return self
+
+        def get_name(self):
+            return string(self.name)
+
+        def get_filename(self):
+            return self.filename
+
+        def get_trivia1(self):
+            return self.trivia1
+
+        def get_trivia2(self):
+            return self.trivia2
+
+        def get_trivia3(self):
+            return self.trivia3
+
+        def get_charnb(self):
+            return self.charnb
+
+        def get_friendlvl(self):
+            return self.friendlvl
+
+        def friendshipUP(self):
+            self.friendlvl += 1
+
+    class CharacterList(object):
+        def __init__(self):
+            self.characters = []
+
+        def add_character(self,_character):
+            self.characters.append(_character)
+
+        def remove_character(self,_character):
+            self.characters.pop(_character.get_charnb)
 
     class Clue(object):
         def __init__(self, name, state, desc):
