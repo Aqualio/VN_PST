@@ -13,7 +13,7 @@ define juan = Character("Juan")
 define brice = Character("Brice")
 define sadiq = Character("Sadiq")
 define charles = Character("Charles")
-define mc_meuf = Character("Love interest")
+define mc_meuf = Character("Alex")
 
 ##EFFECTS
 
@@ -45,6 +45,7 @@ init python:
     config.tag_layer['charac'] = 'screens' # all images with the tag 'bg' are put on layer 'bg'
 
     vpunch = Move((0, 10), (0, -10), .10, bounce=True, repeat=True, delay=1.275)#0.275 de base
+    opunch = Move((0, 5), (0, -5), .10, bounce=True, repeat=True, delay=.5)
     hpunch = Move((15, 0), (-15, 0), .10, bounce=True, repeat=True, delay=.275)
 
 ##----------------------------------------
@@ -133,7 +134,7 @@ label preintro:
 
     scene classroom
     with fade
-    show eileen happy at slightright
+    show charac alex normal_idle at slightright
     with fade
 
     li "Finally! You're awake! Sleeping in the first lesson of college I see... Haha"
@@ -162,6 +163,9 @@ label introEnd :
     li "So... It is [name], I see... Well see you later then! I hope we can become great friends!"
 
     mc "Oh yeah, I hope so too..."
+    
+    hide charac alex normal_idle 
+    with fade
 
     show pblack_screen
     with dissolve
@@ -435,8 +439,15 @@ label prologue:
     pause 1
     scene school hallway morning with fade # need
     pause 1
+    $stylo = Clue("Stylo",0,"a pen I found in the hallway")
+    $cluelist.add_clue(stylo)
 
     mc "And here I am, wandering about in the university’s hallways while the sun is bright out and other students are enjoying their day. Even I’m wondering why i’m here."
+    
+    with opunch
+    mc "Oh! what is this ?"
+    centered "{size=+10}{color=#000000}{outlinecolor=#ffffff}An item has been added to your inventory. Go check it out !{/outlinecolor}{/color}{/size}"
+    
     mc "Why is it that I end up spending my afternoon going to my math teacher’s office to ask him for help with his own course."
     mc "While it is true that maths never really were my strong suit, this semester’s been the absolute worse so far."
     mc "Mr Epstein really is what the rumors depicted him as, and more."
@@ -462,16 +473,20 @@ label prologue:
     mc "I’m pretty sure the scream came from here though… Maybe he fell and broke a shelf or something, he must be quite hurt in here from the sound of it. Should I maybe come back later?"
     mc "Eh? Whatever, i’m already wasting my afternoon being here, better at least help him out, maybe i’ll get something out of it who knows."
     mc "I slowly push the door open…"
+    pause 1 
 
-    ##door_sfx
-    m "ADD HERE DOOR SFX hehehehehehe Line 359"
-    ##dramatic_reveal_sfx
-    scene epstein_dead
+    play sound "audio/Effects/Creeky-Interior-Door.mp3"
+
+    scene pblack_screen
+    with dissolve
     play music "audio/BGM/epstein_dead.ogg" fadein 1.0 fadeout 1.0
 
     mc "He’s not alone ! He is with a girl ? What are they doing together ? What !?"
-    mc "It’s ‘mc_meuf’ ! What are they doing on the ground so close to each other ? Did he hurt her ?! That bastard ! I repress my surging anger and ask"
+    mc "It’s Alex ! What are they doing on the ground so close to each other ? Did he hurt her ?! That bastard ! I repress my surging anger and ask"
     mc "What’s happening here ?"
+    
+    show charac alex sad_idle
+    
     mc_meuf "I...I..tried to st...stop him. He was to fast."
     mc "What are you talking about, what happened ?"
     mc "As I look around I see that Epstein is still on the ground. He’s not moving. Is he …?"
