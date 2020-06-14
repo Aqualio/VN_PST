@@ -185,11 +185,11 @@ label intro:
     mc "Engineering majors… hmmmm"
     mc "Ah! Room A5, let’s go then."
 
-    hide screen Menu
-    show screen Menu(0,1)
     centered "{size=+10}{color=#000000}{outlinecolor=#ffffff}The tutorial on how to use the map starts now{/outlinecolor}{/color}{/size}"
     centered "{size=+10}{color=#000000}{outlinecolor=#ffffff}Please click on the shoe icon to display the map and click on a location !{/outlinecolor}{/color}{/size}"
-
+    hide screen Menu
+    show screen Menu(0,1)
+    
     while 1:
         $renpy.pause(hard=True)
 
@@ -236,8 +236,8 @@ label intro_LectureHall:
     hide charac epstein normal_idle
 
     hide screen LectureHall
-    with fade
-    pause 1
+    with dissolve
+    
     jump prologue
     while 1:
         $renpy.pause(hard=True)
@@ -431,7 +431,7 @@ label intro_charles:
 label prologue:
     $storyDevelopment = "prologue"
     pause 1
-    scene school hallway with fade # need
+    scene school hallway morning with fade # need
     pause 1
 
     mc "And here I am, wandering about in the university’s hallways while the sun is bright out and other students are enjoying their day. Even I’m wondering why i’m here."
