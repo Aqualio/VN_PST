@@ -345,7 +345,7 @@ label intro_charles:
 label prologue:
     $storyDevelopment = "prologue"
     pause 1
-    scene school hallway with fade # need
+    scene school hallway morning with fade # need
     pause 1
 
     mc "And here I am, wandering about in the university’s hallways while the sun is bright out and other students are enjoying their day. Even I’m wondering why i’m here."
