@@ -136,7 +136,7 @@ init:
         modal False
         #here can make a list of object composed of each clues with each their description and according to param of the screen use the fct to look through the list and find the correct item available to player and display its information
         text "[item_name] :" size 20 xalign 0.6 yalign 0.15
-        text "[item_desc]" size 16 xalign 0.61 yalign 0.2
+        text "[item_desc]" size 16 xalign 0.7 yalign 0.2
 
     screen notebook_clues_screen:
         $x = 0.18
