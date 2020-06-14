@@ -13,9 +13,8 @@ image displacement = "BoutonDeplacement.png" #N'en garder qu'un
 
 ##---------------------------------------------------------------------
 ##BACKGROUND IMAGE
-image Library = "bg club.jpg"
-image Dormitory = "bg lecturehall.jpg" ##change image NASSIM
-image Cafeteria = "bg club.jpg" ## changer d'image NASSIM
+image Dormitory = "school dormitory room morning.jpg" ##change image NASSIM
+image Cafeteria = "school cafeteria inside afternoon.jpg" ## changer d'image NASSIM
 image LectureHall = "bg lecturehall.jpg"
 ##----------------------------------------------------------------------
 
